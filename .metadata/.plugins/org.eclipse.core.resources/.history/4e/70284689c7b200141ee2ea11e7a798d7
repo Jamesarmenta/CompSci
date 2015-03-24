@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Lab03 {
+
+	static int startIdx;
+	static int endIdx;
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int list [] = {-1, 4, 2, 3, -3, -10, 8, -1, 1};
+
+	}
+	
+	public static int maxCSS3(int list[])
+	{
+		int maxSum = 0;
+		int currSum = 0;
+		startIdx = 0; 
+		endIdx = -1;
+		for (int ei=0;  ei<list.length; ei++)
+		{
+			currSum += list[ei];
+
+			// check if the currSum is best yet
+			if (currSum >= maxSum)
+			{
+				maxSum = currSum;
+				endIdx = ei;
+			}
+			
+			// check if the sum becomes negative and set si, ei appropriately
+			if (currSum < 0)
+			{
+				currSum = 0;
+			}
+			
+		}
+		
+		return maxSum;
+	}
+
+}

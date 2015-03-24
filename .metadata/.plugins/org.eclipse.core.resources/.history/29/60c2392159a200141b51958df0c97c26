@@ -1,0 +1,15 @@
+class studentScore{  
+    static String name;  
+    int score;  
+ 
+    studentScore(String n,int s){  
+    name = n;  
+    score = s;  
+    }   
+    
+    public static void main(String[] args){
+    
+    	
+    	
+    }
+}  

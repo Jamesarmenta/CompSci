@@ -1,0 +1,33 @@
+public class studentScore
+{
+   private int stuScore;
+   private String stuName;
+
+   studentScore(String str, int num2)
+   {
+       //Parameterized constructor
+       stuScore = num2;
+       stuName = str;
+   }
+   //Get and set methods
+   public int getStuScore() {
+       return stuScore;
+   }
+   public void setStuScore(int stuScore) {
+       this.stuScore = stuScore;
+   }
+   public String getStuName() {
+       return stuName;
+   }
+   public void setStuName(String stuName) {
+       this.stuName = stuName;
+   }
+
+   public static void main(String[]args){
+	   studentScore[] array;
+	   array[0] = new studentScore("Test Student", 25);
+       System.out.println("Student Name is: "+array[0];
+       System.out.println("Student Score is: "+s1.getStuScore());
+   }
+   
+}

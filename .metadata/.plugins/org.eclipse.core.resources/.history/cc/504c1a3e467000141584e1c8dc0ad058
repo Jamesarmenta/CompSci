@@ -1,0 +1,109 @@
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+
+@SuppressWarnings({ "unused", "serial" })
+
+public class RegionPartition extends JFrame
+{
+    JLayeredPane layeredPane;
+    JPanel regionBoard;
+    JLabel regionPiece;
+
+    private static int DELAY = 200;
+
+    private Color[] colors = new Color[]{Color.PINK, Color.GREEN, Color.BLACK, Color.RED};
+
+    public RegionPartition()
+    {
+        Dimension boardSize = new Dimension(500, 500);
+
+        //  Use a Layered Pane for this this application
+        layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
+        layeredPane.setPreferredSize(boardSize);
+
+        regionBoard = new JPanel();
+
+        layeredPane.add(regionBoard, JLayeredPane.DEFAULT_LAYER);
+
+        regionBoard.setLayout( new GridLayout(4, 4) );
+
+        regionBoard.setPreferredSize( boardSize );
+        regionBoard.setBounds(0, 0, boardSize.width, boardSize.height);
+
+        Random random = new Random();
+
+
+        for (int i = 0; i < 16; i++) {          
+            JPanel square = new JPanel(new BorderLayout());
+            square.setBorder(BorderFactory.createLineBorder(Color.black));
+            regionBoard.add( square );  
+
+            square.setBackground(Color.green);
+
+            int j=0;
+
+            square.setBackground(colors[j]);
+
+            j++;
+        }
+    }
+
+    {
+        JPanel panel = new JPanel()  
+        {  
+            Clients[] c = new Clients[128];
+
+            Random random = new Random();
+
+            private final int SIZE = 450;
+            private int DELAY = 9999999;
+            public void paintComponent (Graphics g)
+            {
+                super.paintComponent(g);
+
+                for (int i=0; i<c.length; i++)
+                {
+                    int x = ( int ) ( random.nextFloat() * SIZE ) + 10;
+                    int y = ( int ) ( random.nextFloat() * SIZE ) + 10;
+
+                    g.drawOval( x, y, 10, 10 );
+                    g.fillOval(x, y, 10, 10);
+                }
+
+                for (int j=0; j<DELAY; j++)
+                {
+                    repaint();
+                }
+            }
+        };  
+
+        panel.setOpaque(false);  
+
+        //Set the glass pane in the JFrame  
+        setGlassPane(panel);  
+
+        //Display the panel  
+
+        panel.setVisible(true);  
+    }
+
+    public static void main(String[] args)
+    {
+        JFrame frame = new RegionPartition();
+
+        frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE );
+        frame.pack();
+        frame.setResizable(true);
+        frame.setLocationRelativeTo( null );
+        frame.setVisible(true);
+
+    }
+
+    protected void paintComponent(Graphics g)
+    {
+        // TODO Auto-generated method stub
+    }
+}

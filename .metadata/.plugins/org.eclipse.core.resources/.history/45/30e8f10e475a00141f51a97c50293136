@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project5 {
+	
+	public static String inputFile = "src/input.txt";
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)throws FileNotFoundException {
+		System.out.print(FileInfo.lineCounter());
+		
+	}
+
+}

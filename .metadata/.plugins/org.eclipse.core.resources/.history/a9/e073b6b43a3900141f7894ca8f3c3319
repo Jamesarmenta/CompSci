@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Project1 {
+    static int number7;
+    public static void main(String[] args) {
+    input();
+    output();   
+   }
+
+    public static void input() {
+
+        Scanner console = new Scanner(System.in);
+
+        System.out.print("This number multiplied by 7: ");
+        int number = console.nextInt();
+
+        int number7 = number * 7;
+        System.out.print("The result is: " + number7);
+    }
+
+    public static void output() {
+
+        Scanner console = new Scanner(System.in);
+
+        System.out.print("The result multiplied by two: ");
+        int number = console.nextInt();
+
+        int number2 = number7 * 2;
+        System.out.print("The result is: " + number2);
+    }
+}

@@ -1,0 +1,145 @@
+
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class game2 {
+	public static void main(String[] args){
+	
+	Scanner input = new Scanner(System.in);
+	//Getting players name
+	System.out.println("Please enter your Hero/Heroin's name!");
+	
+	String name;
+	
+	name = input.nextLine();
+	//Initializing game
+	System.out.println("Hello " + name + " I hope you are ready to go on an adventure");
+	System.out.println("Welcome to BATTLEWORLD, the location of your adventure");
+	
+	System.out.println();
+	
+	System.out.println();	
+	System.out.println("One of three things will happen in BATTLELAND, trap, explore, or BATTLE!");
+	System.out.println("You can play for as long as you want, collecting treasure");
+	
+	Random rand = new Random();
+	//Getting the player their attributes
+	int enemywit = rand.nextInt(99)+1;
+	int wit = rand.nextInt(99)+1;
+	int health = 100;
+	int stamina = 100;
+	int treasure = 0;
+	
+	System.out.println("Your enemyswit is " + enemywit);
+	System.out.println("Your wit is " + wit);
+	System.out.println("Your health is " + health);
+	System.out.println("Your stamina is " + stamina);
+	System.out.println("Your treasure is " + treasure);
+
+	System.out.println();
+	System.out.println("Lets listen to the hero...");
+	System.out.println();
+	
+	int pursuit;
+	
+	
+
+	System.out.println("Pursuit? (1 = yes, 0 = no)");
+	
+	pursuit = input.nextInt();
+	//Loop that allows the player to keep playing or stop
+	while (pursuit==1){
+		
+		int game = rand.nextInt(2)+1;
+		
+		if (game == 1){
+			trap(wit, health, stamina);
+			
+		}
+		System.out.println("Pursuit? (1 = yes, 0 = no)");
+		
+		pursuit = input.nextInt();
+		}
+			
+	
+	}
+	
+	//Trap state
+	public static void trap(int wit,int health,int stamina){
+		
+		
+		Random rand = new Random();
+		int i;
+		for (i = 1; i < 10;){
+		
+		int difficulty = rand.nextInt(99)+1;
+		int help = rand.nextInt(49)+1;
+		//A loss in the trap
+		if (difficulty > wit + health + stamina + help ){
+			health = health - 10;
+			i++;
+		}
+		//A win in the trap
+		else if (wit + health + stamina + help >= difficulty){
+			System.out.println("You have escaped");
+			i = 0;
+			break;
+		}
+		
+		
+		}
+		
+	}
+	
+	//Explore State
+	public static void explore()
+	{
+		
+		Random rand = new Random();
+		int robbery = rand.nextInt(2);
+		
+		System.out.println("I am exploring...");
+		//Robbery
+		if(robbery==1){
+			treasure -= 50;
+			health -= 50;
+			stamina -= 50;
+			System.out.println("You were robbed!");
+		}
+		else{
+			
+			treasure += 20;
+			health += 20;
+			stamina += 20;
+			System.out.println("You found 20 treasure!");
+		}
+		}
+	
+	//Battle State
+	public static void battle()
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

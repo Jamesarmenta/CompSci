@@ -1,0 +1,39 @@
+public class BinarySearchTree 
+{
+	public BSTNode key;
+	public BSTNode left;
+    public BSTNode right;
+    public BSTNode parent;
+
+	// default constructor to create an empty linked list
+	public BinarySearchtree()
+	{
+		key = null;
+		left = null;
+		right = null;
+		parent = null;
+	}
+
+	// constructor that takes in a Node that makes the linked list be of size 1 
+	public BinarySearchtree(BSTNode k)
+	{
+		key = k;
+		left = null;
+		right = null;
+		parent = null;
+	}
+	
+	// constructor that takes in a int that gets made into a Node 
+	// that makes the linked list be of size 1 
+	public BinarySearchtree(int k)
+	{
+		key = new BSTNode(k);
+		left = null;
+		right = null;
+		parent = null;;
+	}
+	
+	
+	
+	
+}

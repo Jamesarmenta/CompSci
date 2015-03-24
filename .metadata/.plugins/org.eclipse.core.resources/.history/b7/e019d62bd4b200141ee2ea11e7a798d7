@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+
+
+public class ItemListMethods {
+
+	
+	public static void main(String[] args){
+		
+		ArrayList<Item> itemList = new ArrayList<Item>();
+		itemList.add( new StudentScore(name, score));
+		
+	}
+	
+}

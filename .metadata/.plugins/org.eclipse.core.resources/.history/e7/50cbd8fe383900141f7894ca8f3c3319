@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class HelloWorld {
+	
+	/**
+	 * @param print
+	 */
+	public static void main(String[] print) {
+			String variable = "foo";
+			System.out.println("it works" + variable);	
+
+	}
+
+}

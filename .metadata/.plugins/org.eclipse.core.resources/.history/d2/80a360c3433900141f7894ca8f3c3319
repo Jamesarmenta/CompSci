@@ -1,0 +1,33 @@
+/**@author James Armenta
+ * @see http://stackoverflow.com/questions/18583106/java-assigning-user-input-to-variable-change-counter
+ * 
+ */
+
+import java.util.*;
+
+
+public class Project1 {
+
+
+    public static void main(String[] args) {
+
+    	Scanner input =  new Scanner(System.in);
+
+        /* Get total of bill */
+        System.out.print("Bill total: $");
+        double billTotal = input.nextDouble();
+
+        /* Get tip percentage */
+        System.out.print("Tip percentage: %");
+        double tipPercent = input.nextDouble();
+        double tipPercentDecimal = tipPercent / 100;
+        
+        /* Multiply and print tip amount */
+        double tipAmountLong = tipPercentDecimal * billTotal;
+        DecimalFormat f = new DecimalFormat("##.00");  // this will helps you to always keeps in two decimal places
+        System.out.println(f.format(tipAmountLong));
+        System.out.println("Tip Amount: $" + tipAmount);
+        
+    }
+    
+}

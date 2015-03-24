@@ -1,0 +1,127 @@
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+import javax.imageio.ImageIO;
+
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ * @see http://stackoverflow.com/questions/10880083/get-rgb-of-a-bufferedimage
+ * @see https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TopLevelDemoProject/src/components/TopLevelDemo.java
+ */
+public class FinalProject {
+
+	public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+    }
+	
+    protected static JComponent makeTextPanel(String text) {
+        JPanel panel = new JPanel(false);
+        JLabel filler = new JLabel(text);
+        filler.setHorizontalAlignment(JLabel.CENTER);
+        panel.setLayout(new GridLayout(1, 1));
+        panel.add(filler);
+        return panel;
+    }
+	
+	private static void createAndShowGUI() {
+		
+		int red = 255;
+		int green = 0;
+		int blue = 255;
+		
+        //Create and set up the window.
+		JTabbedPane tabbedPane = new JTabbedPane();
+         
+        JComponent panel1 = makeTextPanel("Panel #1");
+        tabbedPane.addTab("Tab 1", panel1,
+                "Does nothing");
+        tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
+         
+        JComponent panel2 = makeTextPanel("Panel #2");
+        tabbedPane.addTab("Tab 2", panel2,
+                "Does twice as much nothing");
+        tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
+         
+        JComponent panel3 = makeTextPanel("Panel #3");
+        tabbedPane.addTab("Tab 3", panel3,
+                "Still does nothing");
+        tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+         
+        JComponent panel4 = makeTextPanel(
+                "Panel #4 (has a preferred size of 410 x 50).");
+        panel4.setPreferredSize(new Dimension(410, 50));
+        tabbedPane.addTab("Tab 4", panel4,
+                "Does nothing at all");
+        tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
+         
+        //Add the tabbed pane to this panel.
+        add(tabbedPane);OSE);
+ 
+        //Create the menu bar.  Make it have a green background.
+        JMenuBar greenMenuBar = new JMenuBar();
+        greenMenuBar.setOpaque(true);
+        greenMenuBar.setBackground(new Color(0, 255, 127));
+        greenMenuBar.setPreferredSize(new Dimension(200, 100));
+ 
+        //Create a yellow label to put in the content pane.
+        JLabel yellowLabel = new JLabel();
+        yellowLabel.setOpaque(true);
+        yellowLabel.setBackground(new Color(0, 0, 255));
+        yellowLabel.setPreferredSize(new Dimension(400, 400));
+ 
+        //Set the menu bar and add the label to the content pane.
+        frame.setJMenuBar(greenMenuBar);
+ 
+        //Display the window.
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+	
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void getRgbValue() throws Exception {
+
+	    BufferedImage image = ImageIO.read(
+	         new File("src/red.png"));
+
+	    int w = image.getWidth();
+	    int h = image.getHeight();
+
+	    int[] dataBuffInt = image.getRGB(0, 0, w, h, null, 0, w); 
+	    //startX the starting X coordinate
+	    //startY the starting Y coordinate
+	    //w width of region
+	    //h height of region
+	    //rgbArray if not null, the rgb pixels are written here
+	    //offset offset into the rgbArray
+	    //scansize scanline stride for the rgbArray
+	    
+	    int wxh = (w * h)-1; //multiply width & height to get total number of pixels
+	    
+	    while (wxh>0){
+	    Color c = new Color(dataBuffInt[wxh]);
+	    //print RGB value of pixel, starting bottom up
+	    System.out.println(c.getRed() + " " + c.getGreen() + " " + c.getBlue() + " " + c.getAlpha());   // = (dataBuffInt[100] >> 16) & 0xFF
+	    //subtract after each iteration
+	    wxh--;
+	    }
+	}
+
+}

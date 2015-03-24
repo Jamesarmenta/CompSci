@@ -1,0 +1,57 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class FileParser {
+	
+	int num;
+	int exper;
+	String sex;
+	int school;
+	public double wage;
+	
+	 /** A method 
+	 * 
+	 * @return 
+	 */
+	public FileParser() throws FileNotFoundException {
+		Scanner fileReader = new Scanner(new File(Project5.inputFile));
+		//Declare array types
+		int[] num = new int[FileInfo.lineCounter()];
+		int[] exper = new int[FileInfo.lineCounter()];
+		String[] sex = new String[FileInfo.lineCounter()];
+		int[] school = new int[FileInfo.lineCounter()];
+		double[] wage = new double[FileInfo.lineCounter()];
+
+		int i = 0;
+		
+		//While input has line, print to output
+		while (fileReader.hasNext()) {
+				
+			//Get position int
+			num[i] = fileReader.nextInt();
+			
+			//Get experience int
+			exper[i] = fileReader.nextInt();
+							
+			//Get sex string
+			sex[i] = fileReader.next();
+
+			//Get school int
+			school[i] = fileReader.nextInt();
+							
+			//Get wage double
+			wage[i] = fileReader.nextDouble();
+							
+			i++;
+							        
+			}
+		fileReader.close();
+
+	}
+
+	public static char[] getWage() {
+		return wage;
+	}
+}

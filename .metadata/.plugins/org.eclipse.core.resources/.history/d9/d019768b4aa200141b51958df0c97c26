@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+/**
+ * @author jarmenta
+ *
+ */
+public class NumberInfo {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int howManyStudents;
+		Scanner userInput = new Scanner(System.in);
+		
+		System.out.println("How many students?");
+		
+		howManyStudents = userInput.nextInt();
+		int scores[] = new int[howManyStudents];
+	}
+
+}

@@ -1,0 +1,18 @@
+
+public class Lab08 {
+
+	public static void main(String[] args) {
+	int list[] = {0,1,2,3,4,5};
+
+	}
+	
+	public static int evens(int list[]){
+		
+		int idx = 0;
+		
+		if(list[idx]% 2 == 1)
+		
+		return 0;
+	}
+
+}

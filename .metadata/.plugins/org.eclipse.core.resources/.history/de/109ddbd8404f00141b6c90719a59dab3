@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project4 {
+
+	/**
+	 * @param args
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+		//Open Scanner for file input
+		Scanner input = new Scanner(new File ("src/input.txt"));
+		//Open PrintStream for file output
+		PrintStream output = new PrintStream(new File("src/output.txt"));
+		
+		//While input has line, print to output
+		while (input.hasNextLine()) {
+			
+			String line = input.nextLine();
+			
+			if(line.contains("Opening")){
+			    if(line.contains("Savings")){
+			    	System.out.println("YEAHHHH");
+			    };
+			} else{
+			    System.out.println("other");
+			}
+			
+			//Variable for the line
+			
+			//Print to output
+			output.println();
+		}
+		
+		output.close();
+		input.close();
+	}
+	public static void lineProccessor(String[] args) {
+	
+	}
+
+}

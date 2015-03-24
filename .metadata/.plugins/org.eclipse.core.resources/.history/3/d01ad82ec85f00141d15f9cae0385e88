@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class Parser {
+    Person[] persons;
+    public void lineByLine() throws FileNotFoundException {
+        this.persons = new Person[FileInfo.numLines()];
+        Scanner fileReader = new Scanner(new File("src/input.txt"));
+        int i = 0;
+        while (fileReader.hasNext()) {
+            this.persons[i] = new Person(
+            		fileReader.nextInt(),
+            		fileReader.nextInt(),
+            		fileReader.next(),
+            		fileReader.nextInt(),
+            		fileReader.nextDouble()
+    		);
+            i++;
+        }
+    }
+
+
+public int analyze() {
+	double wagePerSchoolYear = 0;
+	double avgWagePerSchoolYear = 0;
+    int wageAmount = 0;
+    int numOfSchool = 0;
+    for (Person personal : this.persons) {
+        if (personal.sex.contains("female")) {
+            wagePerSchoolYear+= personal.wage/personal.yearsOfSchooling;
+        }
+    }
+    return avgWagePerSchoolYear;
+}
+}

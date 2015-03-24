@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+/**
+ * @author jarmenta
+ *
+ */
+public class NumberInfo {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int howManyStudents;
+		Scanner userInput = new Scanner(System.in);
+		int scores[];
+	}
+
+}

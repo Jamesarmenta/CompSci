@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner textProcessor = new Scanner("10 15 20");
+		
+		while(textProcessor.hasNextInt()) {
+			System.out.println(textProcessor);
+		}
+		
+		textProcessor.close();
+	}
+	public static void lineProccessor(String[] args) {
+	
+	}
+
+}

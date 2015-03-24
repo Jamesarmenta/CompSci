@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Lab03 {
+
+	static int startIdx;
+	static int endIdx;
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int nums[] = {-1, 4, 2, 3, -3, -10, 8, -1, 1};
+		int maxCSSum;
+		maxCSSum = maxCSS3(nums);
+		System.out.println("The maximum sum of a continuous subsequence is " + maxCSSum);
+		displaySequence(nums,startIdx,endIdx);
+	}
+	
+	public static int maxCSS3(int list[])
+	{
+		int maxSum = 0;
+		int currSum = 0;
+		
+		for (int ci=0;  ci<list.length; ci++)
+		{
+			currSum += list[ci];
+
+			// check if the currSum is best yet
+			if (currSum >= maxSum)
+			{
+				maxSum = currSum;
+				endIdx = ci;
+			}
+			
+			// check if the sum becomes negative and reset start index + sum
+			if (currSum < 0)
+			{
+				currSum = 0;
+				startIdx = ci;
+			}
+			
+		}
+		return maxSum;
+	}
+	
+	public static void displaySequence(int list[], int start, int end)
+	{
+		System.out.print("Subsequence: ");
+		System.out.print(list[start] + ", ");
+		
+		int between = start+1; //number for elements between start & end
+		
+		if (start < end && between < end){
+			System.out.print(list[between] + ", ");
+			between++;
+		} else {
+			System.out.println("you messed up");
+		}
+		
+		System.out.println(list[end]);
+	}
+}

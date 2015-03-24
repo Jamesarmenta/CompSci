@@ -1,0 +1,15 @@
+INDEX VERSION 1.126+/students/home/jarmenta/CompSci/.metadata/.plugins/org.eclipse.jdt.core
+3853951565.index
+2624199401.index
+224007895.index
+3828986850.index
+2052924993.index
+3813963771.index
+34508618.index
+2600984304.index
+3927879410.index
+1919187909.index
+296566835.index
+1231130732.index
+90393427.index
+2470347636.index

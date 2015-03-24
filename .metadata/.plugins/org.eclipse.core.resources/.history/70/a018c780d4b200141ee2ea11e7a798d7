@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+
+public class ItemListMethods {
+
+	
+	public static void main(String[] args){
+		
+		ArrayList<Item> itemList = new ArrayList<Item>();
+		
+		String item = "eggs";
+		double price = 5.5;
+		int quantity = 9;
+		
+		itemList.add(new Item(item, price, quantity));
+		
+		System.out.println(itemList.get(0).toString());
+	}
+	
+}

@@ -1,0 +1,31 @@
+public class DLListTester {
+
+	public static void main(String[] args) 
+	{
+		DLList myDL = new DLList();
+		myDL.addToBeginning(new DNode(333));
+		//myDL.addToBeginning(new DNode(222));
+		//myDL.addToBeginning(new DNode(111));
+		//myDL.delete(333);
+		//myDL.clear();
+		//myDL.addToEnd(new DNode(222));
+		//myDL.addAfter(222,90);
+		
+		myDL.printList();
+		System.out.println("- - - - - - ");
+		myDL.printListBackwards();
+		
+		System.out.println("**********");
+		System.out.println("Head:");
+		if(myDL.head!=null)
+		{
+			System.out.println(myDL.head.data);
+		}
+		System.out.println("Tail:");
+		if(myDL.tail!=null)
+		{
+			System.out.println(myDL.tail.data);
+		}
+	}
+
+}

@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Lab02 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner input =  new Scanner(System.in);
+		
+/* MENU **************/
+		
+        // Criterion
+		System.out.println("1 Add a student and a test score to the list of students / scores.");
+		System.out.println("2 Find the score for a particular student.");
+        System.out.println("3 Find the student with the maximum score");
+        System.out.println("4 Find the student with the minimum score.");
+        System.out.println("5 Display the students sorted by test score.");
+        System.out.println("6 Delete a student.");
+        System.out.println("7 Change a score for a particular student.");
+        System.out.println("8 Quit");
+
+	}
+
+}

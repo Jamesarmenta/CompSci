@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project4 {
+
+	/**
+	 * @param args
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+		Scanner textProcessor = new Scanner("10 15 20");
+		
+		PrintStream output = new PrintStream(new File("src/output.txt"));
+		
+		while (textProcessor.hasNextInt()) {
+		    output.println(textProcessor.nextInt());
+		}
+		
+		output.close();
+		textProcessor.close();
+	}
+	public static void lineProccessor(String[] args) {
+	
+	}
+
+}

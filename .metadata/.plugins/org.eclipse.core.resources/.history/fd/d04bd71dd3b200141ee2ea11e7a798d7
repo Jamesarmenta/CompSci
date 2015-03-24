@@ -1,0 +1,34 @@
+public class Item implements Comparable<Item>{
+	
+	private String item;
+	private double price;
+	private int quantity;
+	
+	public Item(){ //Default input
+		item = "Student";
+		price = 0;
+		quantity = 1;
+	}
+	
+	public StudentScore(String name, int score)
+	{
+		this.name = name;
+		setScore(score);
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setScore(int score)
+	{
+		if (score >= 0 && score <= 100)
+		{
+			this.score = score;
+		}
+		else
+		{
+			this.score = 0; //if score is outside of 0-100, set as 0
+		}
+	}

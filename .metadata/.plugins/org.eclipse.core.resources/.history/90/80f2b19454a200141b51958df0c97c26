@@ -1,0 +1,10 @@
+class nameScoreConstructor{  
+    String name;  
+    int score;  
+ 
+    nameScoreConstructor(String n,int s){  
+    name = n;  
+    score = s;  
+    }   
+   
+}  

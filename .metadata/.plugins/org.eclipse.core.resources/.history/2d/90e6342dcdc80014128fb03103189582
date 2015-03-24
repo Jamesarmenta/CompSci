@@ -1,0 +1,16 @@
+public class UseList {
+
+	public static void main(String[] args) 
+	{
+		LinkedList myLL = new LinkedList(new Node("Skidmore"));
+		
+		
+		System.out.println("- - - - - - ");
+		System.out.println("Head:");
+		System.out.println(myLL.head.data);
+		System.out.println("Tail:");
+
+
+	}
+
+}

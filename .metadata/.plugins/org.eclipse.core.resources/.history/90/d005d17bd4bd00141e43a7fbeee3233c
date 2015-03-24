@@ -1,0 +1,12 @@
+
+public class TestBST {
+
+	public static void main(String[] args) {
+		
+		BSTree myBST = new BSTree(999);
+		
+		myBST.inOrderPrint();
+
+	}
+
+}

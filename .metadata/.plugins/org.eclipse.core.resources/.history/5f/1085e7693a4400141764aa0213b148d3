@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project2 {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		Scanner input =  new Scanner(System.in);
+		/* DEFINE CHARACTERS */
+		double character1 = 0;
+		double character2 = 0;
+		double character3 = 0;
+		
+		
+        /* Which number*/
+        System.out.print("Which number are you?");
+        double quest1 = input.nextDouble();
+        
+        if( quest1 == 1 ){ character1++;}
+        if( quest1 == 2 ){character2++;}
+        else { System.out.println("NOPE");}
+		System.out.println(character1);
+		System.out.println(character2);
+	}
+
+}

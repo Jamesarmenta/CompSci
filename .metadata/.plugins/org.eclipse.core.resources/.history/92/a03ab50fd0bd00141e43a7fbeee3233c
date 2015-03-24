@@ -1,0 +1,42 @@
+public class BSTree 
+{
+	public BSTNode root;
+
+	// default constructor to create an empty Tree
+	public BSTree()
+	{
+		root = new DNode();
+	}
+
+	// constructor that takes in a Node that makes the tree be of size 1 
+	public BSTree(BSTNode k)
+	{
+		key = k;
+		left = null;
+		right = null;
+		parent = null;
+	}
+	
+	// constructor that takes in a int that gets made into a Node 
+	// that makes the tree be of size 1 
+	public BSTree(int k)
+	{
+		key = new BSTNode(k);
+		left = null;
+		right = null;
+		parent = null;;
+	}
+	
+	private void inOrderPrint(BSTNode stRoot)
+	   {
+		if (stRoot != null)
+	        {
+			inOrderPrint(stRoot.left);
+			System.out.println(stRoot.key);
+			inOrderPrint(stRoot.right);
+	        }
+	   }
+	
+	
+	
+}

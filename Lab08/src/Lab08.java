@@ -1,0 +1,82 @@
+
+public class Lab08 {
+
+	public static void main(String[] args) 
+	{
+		
+		int junk[] = {0, 2, 4, 8};
+		if (evens(junk))
+		{
+			System.out.println("There are only evens in the array");
+		}
+		else
+		{
+			System.out.println("There's at least one odd number in the array");
+		}
+		
+		int negjunk[] = {0, 2, 4, 8, 1, -3, -7};
+		if (atLeastOneNegative(negjunk))
+		{
+			System.out.println("There are only positive numbers in the array");
+		}
+		else
+		{
+			System.out.println("There's at least one negative number in the array");
+		}
+		
+
+	}
+
+	public static boolean evens(int list[])
+	{
+		return evens(list, 0);
+		
+	}
+	
+	private static boolean evens(int list[], int idx)
+	{
+		if (list[idx]%2 != 0) // base case
+		{
+			return false;
+		}
+		
+		if(idx == list.length-1) // base case
+		{
+			return true;
+		} 
+		
+		if(evens(list, idx+1)) // recursive step
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public static boolean atLeastOneNegative(int list[])
+	{
+		return atLeastOneNegative(list, 0);
+		
+	}
+	
+	private static boolean atLeastOneNegative(int list[], int idx)
+	{
+		if (list[idx] < 0) // base case
+		{
+			return false;
+		}
+		
+		if(idx == list.length-1) // base case
+		{
+			return true;
+		} 
+		
+		if(atLeastOneNegative(list, idx+1)) // recursive step
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+}

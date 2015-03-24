@@ -1,0 +1,51 @@
+/**@author James Armenta
+ * @see http://stackoverflow.com/questions/18583106/java-assigning-user-input-to-variable-change-counter
+ * @see http://bytes.com/topic/java/answers/770759-rounding-up-float-value
+ */
+
+import java.util.*;
+import java.text.*;
+import java.text.DecimalFormat;
+
+public class Project1 {
+
+
+    public static void main(String[] args) {
+
+    	Scanner input =  new Scanner(System.in);
+
+        /* Get total of bill */
+        System.out.print("Bill total: $");
+        double billTotal = input.nextDouble();
+
+        /* Get tip percentage */
+        System.out.print("Tip percentage: %");
+        double tipPercent = input.nextDouble();
+        double tipPercentDecimal = tipPercent / 100;
+        
+        /* Multiply total and tip percentage */
+        double tipAmount = tipPercentDecimal * billTotal;
+        
+        /*Formatting for currency */
+        DecimalFormat money = new DecimalFormat("$0.00");
+        DecimalFormat cents = new DecimalFormat(".00");
+        DecimalFormat percent = new DecimalFormat("00.0%");
+        
+        /*Print formatted tip amount */
+        System.out.println("Exact Tip Amount: " + money.format(tipAmount));
+
+        
+        /****************/
+        
+        /*Round up base tip*/
+        double roundedTip = (double)Math.ceil(tipAmount);
+        
+        /*Subtract tipAmount from roundedTip to get remainder*/
+        double roundedCents = roundedTip - tipAmount;
+        
+        System.out.println("Or round up $" + cents.format(roundedCents) + " for an even tip of " + money.format(roundedTip) + " a tip of " + percent.format((roundedTip / billTotal)));
+    }
+    	
+    
+    
+}

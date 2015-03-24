@@ -1,0 +1,43 @@
+
+public class Lab08 {
+
+	public static void main(String[] args) 
+	{
+		int list[] = {2,4,6,8};
+		
+		if(evens(list, 0) == true)
+		{
+			System.out.println("All evens!!");
+		}
+		else
+		{
+			System.out.println("NOOOOPE");
+		}
+		
+
+	}
+	
+	public static boolean evens(int list[], int idx)
+	{
+		if (list[idx]%2 != 0)
+		{
+			System.out.println("1");
+			return false;
+		}
+		
+		if(idx == list.length-1) // base case
+		{
+			System.out.println("2");
+			return true;
+		} 
+		
+		if(evens(list, idx+1) == true)
+		{
+			return true;
+		}
+		
+		System.out.println("3");
+		return false;
+	}
+
+}

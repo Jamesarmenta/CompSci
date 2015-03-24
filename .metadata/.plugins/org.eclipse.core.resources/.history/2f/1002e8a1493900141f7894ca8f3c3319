@@ -1,0 +1,45 @@
+/**@author James Armenta
+ * @see http://stackoverflow.com/questions/18583106/java-assigning-user-input-to-variable-change-counter
+ * 
+ */
+
+import java.util.*;
+import java.text.*;
+import java.text.DecimalFormat;
+
+public class Project1 {
+
+
+    public static void main(String[] args) {
+
+    	Scanner input =  new Scanner(System.in);
+
+        /* Get total of bill */
+        System.out.print("Bill total: $");
+        double billTotal = input.nextDouble();
+
+        /* Get tip percentage */
+        System.out.print("Tip percentage: %");
+        double tipPercent = input.nextDouble();
+        double tipPercentDecimal = tipPercent / 100;
+        
+        /* Multiply total and tip percentage */
+        double tipAmount = tipPercentDecimal * billTotal;
+        
+        /*Formatting for currency */
+        DecimalFormat money = new DecimalFormat("$0.00");
+        DecimalFormat cents = new DecimalFormat("¢.00");
+        
+        /*Print formatted tip amount */
+        System.out.println("Exact Tip Amount: " + money.format(tipAmount));
+
+        /*Options for rounding up */
+        
+        double roundedTip = (double)Math.ceil(tipAmount);
+        double roundedCents = .77;
+        System.out.println("Sample " + roundedTip);
+    }
+    	
+    
+    
+}

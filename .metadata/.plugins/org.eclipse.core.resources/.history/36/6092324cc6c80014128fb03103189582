@@ -1,0 +1,24 @@
+
+public class Lab08 {
+
+	public static void main(String[] args) 
+	{
+		int list[] = {0,1,2,3,4,5};
+
+	}
+	
+	public static boolean evens(int list[], idx)
+	{
+		
+		if(idx == list.length-1 && list[idx]%2 == 0)
+		{
+			return true;
+		} 
+		else 
+		{
+			evens(list, idx+1);
+		}
+		
+	}
+
+}

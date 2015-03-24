@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Lab02 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner input =  new Scanner(System.in);
+		
+/* MENU **************/
+		
+        // Criterion
+		System.out.println("Please type the number that correlates with your preffered answer");
+		System.out.println("");
+        System.out.println("What do you like to eat for breakfast? ");
+
+	}
+
+}

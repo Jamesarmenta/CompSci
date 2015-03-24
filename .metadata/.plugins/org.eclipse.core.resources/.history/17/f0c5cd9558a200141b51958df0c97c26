@@ -1,0 +1,26 @@
+class studentScore{  
+    static String name;  
+    int score;  
+ 
+    studentScore(String n,int s){  
+    name = n;  
+    score = s;  
+    }   
+   
+    public static String getName(studentScore s1){
+    	return name;
+    }
+    
+    
+    public static void main(String[] args){
+    studentScore[] studentScore= null;
+    
+	studentScore[1] = new studentScore("Bob", 99);
+    studentScore[2] = new studentScore("Jeff", 96);
+    studentScore[3] = new studentScore("Bill", 88);
+    
+    System.out.println(studentScore[1]);
+    System.out.println(studentScore[2]);
+    System.out.println(studentScore[3]);
+    }
+}  

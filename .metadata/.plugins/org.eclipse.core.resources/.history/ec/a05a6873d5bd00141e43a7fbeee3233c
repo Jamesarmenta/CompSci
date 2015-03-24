@@ -1,0 +1,15 @@
+
+public class TestBST {
+
+	public static void main(String[] args) {
+		
+		BSTree myBST = new BSTree();
+		myBST.insert(100);
+		myBST.insert(50);
+		myBST.insert(150);
+		
+		myBST.inOrderPrint();
+
+	}
+
+}

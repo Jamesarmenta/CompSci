@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project2 {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		Scanner input =  new Scanner(System.in);
+		/* DEFINE CHARACTERS */
+		double character1 = 0;
+		double character2 = 0;
+		double character3 = 0;
+		
+		
+        /* Which number*/
+        System.out.print("Question one?? ");
+        double quest1 = input.nextDouble();
+        
+        if( quest1 == 1 ){ character1++;}
+        if( quest1 == 2 ){character2++;}
+        if( quest1 == 3 ){character3++;}
+		
+		/* Which number2 */
+        System.out.print("Question two?? ");
+        double quest2 = input.nextDouble();
+        
+        if( quest2 == 1 ){ character1++;}
+        if( quest2 == 2 ){character2++;}
+        if( quest2 == 3 ){character3++;}
+	}
+	
+	public static void conclusion(double character1, double character2, double character3) {
+		if(character1 > character2 || character1 > character3){
+			System.out.print("You're Character 1! Woop.");
+		}
+		if(character2 > character1 || character2 > character3){
+			System.out.print("You're Character 2! Woop.");
+		}
+	}
+	
+}

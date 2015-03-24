@@ -1,0 +1,73 @@
+public class BSTree 
+{
+	public BSTNode root;
+
+	// default constructor to create an empty Tree
+	public BSTree()
+	{
+		root = null;
+	}
+
+	// constructor that takes in a Node that makes the tree be of size 1 
+	public BSTree(BSTNode k)
+	{
+		root = k;
+	}
+	
+	// constructor that takes in a int that gets made into a Node 
+	// that makes the tree be of size 1 
+	public BSTree(int k)
+	{
+		root = new BSTNode(k);
+	}
+	
+	public boolean insert(BSTNode nodeToBeAdded)
+	{
+		BSTNode temp = this.root;
+		boolean inserted = false;
+		
+		if(root == null)
+		{
+			root = new BSTNode(toBeAdded);
+			inserted = true;
+		}
+		else
+		{
+			if (temp.key < toBeAdded){
+				toBeAdded.parent = temp;
+			}
+			else
+			{
+				//LOOK RIGHT
+			}
+			
+			
+		}
+		
+		
+		if (inserted == false){System.out.println("Could not insert");}
+		return inserted;
+	}
+	
+	
+	
+	////////////////////////////////////
+	
+	public void inOrderPrint()
+	   {
+		inOrderPrint(root);
+	   }
+	
+	private void inOrderPrint(BSTNode stRoot)
+	   {
+		if (stRoot != null)
+	        {
+			inOrderPrint(stRoot.left);
+			System.out.println(stRoot.key);
+			inOrderPrint(stRoot.right);
+	        }
+	   }
+	
+	
+	
+}

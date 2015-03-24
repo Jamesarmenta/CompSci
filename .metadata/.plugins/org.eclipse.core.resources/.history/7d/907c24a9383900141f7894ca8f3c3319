@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class HelloWorld {
+
+	/**
+	 * @param variableinput
+	 */
+	public static void variableinput(String[] variableinput ) {
+			String variable1 = ("foo");
+			
+			
+
+	}
+	
+	/**
+	 * @param print
+	 */
+	public static void main(String[] print) {
+			System.out.println("it works" + variable1);
+			
+			
+
+	}
+
+}

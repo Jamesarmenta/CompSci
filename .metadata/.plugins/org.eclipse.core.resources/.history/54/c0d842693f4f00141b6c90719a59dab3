@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * @author jarmenta
+ *
+ */
+public class Project4 {
+
+	/**
+	 * @param args
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+		//Open Scanner for file input
+		Scanner input = new Scanner(new File ("src/input.txt"));
+		//Open PrintStream for file output
+		PrintStream output = new PrintStream(new File("src/output.txt"));
+		
+		//While input has line, print to output
+		while (input.hasNextLine()) {
+			
+			String line = input.nextLine();
+			
+			if(line.contains("Credit")){
+			    System.out.println("CREDIT CARD");
+			} else{
+			    System.out.println("NOT CREDIT CARD");
+			}
+			
+			//Variable for the line
+			String date = input.next();
+			String account = input.next();
+			String type = input.next();
+			String second = input.next();
+			String last = input.next();
+			
+			
+			//Print to output
+			output.println();
+		}
+		
+		output.close();
+		input.close();
+	}
+	public static void lineProccessor(String[] args) {
+	
+	}
+
+}

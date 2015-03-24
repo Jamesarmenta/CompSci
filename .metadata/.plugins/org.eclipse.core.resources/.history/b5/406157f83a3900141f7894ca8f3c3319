@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Project1 {
+
+    public static void input() {
+
+        Scanner console = new Scanner(System.in);
+
+        /* Get total of bill */
+        System.out.print("Bill total: ");
+        int billTotal = console.nextInt();
+
+        /* Get tip percentage */
+        System.out.print("Tip percentage: ");
+        double tipPercent = console.nextInt();
+        
+        /* Multiply and print */
+        double tipAmount = tipPercent * billTotal;
+        System.out.println("Tip Amount: " + tipAmount);
+    }
+}

@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class HelloWorld {
+
+	/**
+	 * @param variableinput
+	 */
+	public static void variableinput(String[] variableinput ) {
+			double variable1 = .77;
+			
+			
+
+	}
+	
+	/**
+	 * @param print
+	 */
+	public static void main(String[] print) {
+			System.out.println("it works" + variable1);
+			
+			
+
+	}
+
+}

@@ -1,0 +1,34 @@
+{
+  "/opt/jdk1.7.0_55/jre/lib/rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "/opt/jdk1.7.0_55/jre/lib/rt.jar",
+    "status": "RESOLVED"
+  },
+  "/opt/jdk1.7.0_67/jre/lib/rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "/opt/jdk1.7.0_67/jre/lib/rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027/opt/jdk1.7.0_67/jre/lib/rt.jar\u0027. Skipped."
+  },
+  "/opt/jdk1.7.0_71/jre/lib/rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "/opt/jdk1.7.0_71/jre/lib/rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027/opt/jdk1.7.0_71/jre/lib/rt.jar\u0027. Skipped."
+  },
+  "/students/home/jarmenta/cs106/Lab01/src": {
+    "location": "/students/home/jarmenta/cs106/Lab01/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/jarmenta/cs106/Lab01/src\u0027. Skipped."
+  },
+  "/students/home/jarmenta/cs106/Lab02/src": {
+    "location": "/students/home/jarmenta/cs106/Lab02/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/jarmenta/cs106/Lab02/src\u0027. Skipped."
+  },
+  "/students/home/jarmenta/cs106/Lab05/src": {
+    "location": "/students/home/jarmenta/cs106/Lab05/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/jarmenta/cs106/Lab05/src\u0027. Skipped."
+  }
+}

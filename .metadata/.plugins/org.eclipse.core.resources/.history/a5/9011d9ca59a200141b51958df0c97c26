@@ -1,0 +1,31 @@
+public class studentScore
+{
+   private int stuScore;
+   private String stuName;
+   studentScore()
+   {
+       //Default constructor
+       stuScore = 100;
+       stuName = "New Student";
+   }
+   studentScore(int num1, String str, int num2)
+   {
+       //Parameterized constructor
+       stuScore = num1;
+       stuName = str;
+   }
+   //Getter and setter methods
+   public int getStuScore() {
+       return stuScore;
+   }
+   public void setStuScore(int stuScore) {
+       this.stuScore = stuScore;
+   }
+   public String getStuName() {
+       return stuName;
+   }
+   public void setStuName(String stuName) {
+       this.stuName = stuName;
+   }
+
+}

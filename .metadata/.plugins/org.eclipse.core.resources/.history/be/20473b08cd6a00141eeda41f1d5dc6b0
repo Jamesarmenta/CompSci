@@ -1,0 +1,64 @@
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+import javax.imageio.ImageIO;
+
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ * @see http://stackoverflow.com/questions/10880083/get-rgb-of-a-bufferedimage
+ */
+public class FinalProject {
+
+	public static void main(String[] args) throws Exception {
+		JFrame frame = new JFrame("HelloWorldSwing");
+	    Container pane = frame.getContentPane();
+	    pane.setLayout(new BorderLayout()); 
+	    pane.add(new JButton("W"), BorderLayout.NORTH);
+	    pane.add(new JButton("E"), BorderLayout.SOUTH);
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.pack();
+	    frame.setVisible(true);
+	}
+
+	
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void getRgbValue() throws Exception {
+
+	    BufferedImage image = ImageIO.read(
+	         new File("src/red.png"));
+
+	    int w = image.getWidth();
+	    int h = image.getHeight();
+
+	    int[] dataBuffInt = image.getRGB(0, 0, w, h, null, 0, w); 
+	    //startX the starting X coordinate
+	    //startY the starting Y coordinate
+	    //w width of region
+	    //h height of region
+	    //rgbArray if not null, the rgb pixels are written here
+	    //offset offset into the rgbArray
+	    //scansize scanline stride for the rgbArray
+	    
+	    int wxh = (w * h)-1; //multiply width & height to get total number of pixels
+	    
+	    while (wxh>0){
+	    Color c = new Color(dataBuffInt[wxh]);
+	    //print RGB value of pixel, starting bottom up
+	    System.out.println(c.getRed() + " " + c.getGreen() + " " + c.getBlue() + " " + c.getAlpha());   // = (dataBuffInt[100] >> 16) & 0xFF
+	    //subtract after each iteration
+	    wxh--;
+	    }
+	}
+
+}

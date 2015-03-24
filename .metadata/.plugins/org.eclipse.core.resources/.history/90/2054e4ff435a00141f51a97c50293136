@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+
+public class FileInfo {
+	
+	public static int lineCounter() throws FileNotFoundException {
+		int numLines = 0;
+		Scanner fileReader = new Scanner(new File(Project5.inputFile));
+		while (fileReader.hasNextLine()) {
+			fileReader.nextLine();
+			numLines++;
+		}
+		return numLines;
+	}
+}

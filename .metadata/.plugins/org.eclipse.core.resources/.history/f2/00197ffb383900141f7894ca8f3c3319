@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+/**
+ * @author jarmenta
+ *
+ */
+public class HelloWorld {
+	
+	/**
+	 * @param print
+	 */
+	public static void main(String[] print) {
+			double variable = .77;
+			System.out.println("it works" + variable);	
+
+	}
+
+}
