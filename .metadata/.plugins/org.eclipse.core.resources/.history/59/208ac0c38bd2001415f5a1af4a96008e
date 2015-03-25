@@ -1,0 +1,19 @@
+public class PowerCode {
+	public static void main(String[] args)
+	{
+		power(5,4);
+	}
+	
+	public static int power(int n, int e)
+	{
+		int ans = 1;
+		return power(n, e, ans);
+	}
+	
+	public static int power(int n, int e, int ans)
+	{
+		ans = n*power(n,e,ans);
+		e--;
+		return ans;
+	}
+}

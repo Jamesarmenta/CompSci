@@ -16,7 +16,7 @@ public class LinkedList
 	
 	// constructor that takes in a String that gets made into a Node 
 	// that makes the linked list be of size 1 
-	public LinkedList(String s)
+	public LinkedList(int s)
 	{
 		head = new Node(s);
 	}
@@ -31,10 +31,47 @@ public class LinkedList
 		if (lln != null)
 		{
 			i++;
-			length(lln.next, i);
+			i = length(lln.next, i);
 		}
 		
 		return i;
+
+	}
+	
+	public int largest()
+	{
+		return largest(head, 0);
+	}
+	
+	private static int largest(Node lln, int max)
+	{
+		if (lln != null)
+		{
+			if (lln.data > max){
+				max = lln.data;
+			}
+			return max = largest(lln.next, max);
+		}
+		return max;
+		
+	}
+	
+	public int smallest()
+	{
+		return smallest(head, 999999999);
+	}
+	
+	private static int smallest(Node lln, int min)
+	{
+		if (lln != null)
+		{
+			if (lln.data < min){
+				min = lln.data;
+			}
+			return min = smallest(lln.next, min);
+		}
+		return min;
+		
 	}
 	
 	
@@ -59,134 +96,6 @@ public class LinkedList
 		// then add the nodeToBeAdded after temp
 		temp.next = nodeToBeAdded;
 		
-	}
-	
-	public boolean search(String dataToFind)
-	{
-		Node temp = head;
-		
-		while (temp != null)
-		{
-			if (temp.data.equals(dataToFind))
-			{
-				return true;
-			}
-			temp = temp.next;
-		}
-		
-		return false;
-	}
-
-	public Node searchForNode(String dataToFind)
-	{/*
-	poor programming practice solution:
-		Node temp = head;
-		
-		while (temp != null)
-		{
-			if (temp.data.equals(dataToFind))
-			{
-				return temp;
-			}
-			temp = temp.next;
-		}
-		
-		return null;
-		*/
-		Node temp = head;
-		
-		while (temp != null && !(temp.data.equals(dataToFind)))
-		{
-			temp = temp.next;
-		}
-		
-		return temp;
-		
-	}
-
-	
-	public boolean replace(String findStr, String replaceStr)
-	{
-		Node n = searchForNode(findStr);
-		
-		if (n != null)
-		{
-			n.data = replaceStr;
-			return true;
-		}
-		
-		return false;
-	}
-	
-	// need to fix this up, also noticed it wouldn't work for empty list
-	public boolean delete(String toDeleteStr)
-	{
-		Node temp = head;
-		boolean deleted;
-		
-		// need to handle empty list
-		if (head == null)
-		{
-			deleted = false;
-		}
-		else
-		{
-			// if the head contains the thing to delete
-			if (head.data.equals(toDeleteStr))
-			{
-				// we want to delete the head
-				head = head.next;
-				deleted = true;
-			}
-			else
-			{
-				// we want to continue down the list as long as we have not
-				// gotten to the end of the list and we have not found the 
-				// node to delete
-				while ((temp.next != null) && !(temp.next.data.equals(toDeleteStr)))
-				{
-					temp = temp.next;
-				}
-	
-				// we have either temp.next == null OR we have found it at temp.next.data
-				if (temp.next == null) // means we didn't find 
-				{
-					deleted = false;
-				}
-				else
-				{
-					// 	means we found it at temp.next.data
-					temp.next = temp.next.next; 
-					deleted = true;
-					// sets the next reference of the Node prior to the one we want to delete
-					// to be the Node after the one we want to delete
-				}
-			}
-		}
-		
-		return deleted;
-	}
-	
-	public boolean addAfter(String stringToFind, String stringToAdd)
-	{
-		Node nodeToAdd = new Node(stringToAdd);
-		boolean added;
-		
-		Node foundNode = searchForNode(stringToFind);
-		
-		if (foundNode == null)
-		{
-			added = false;
-		}
-		else
-		{
-			added = true;
-			nodeToAdd.next = foundNode.next;
-			foundNode.next = nodeToAdd;
-		}
-		
-		
-		return added;
 	}
 	
 }

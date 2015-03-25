@@ -1,0 +1,13 @@
+public class PowerCode {
+	public static void main(String[] args)
+	{
+		power(5,4);
+	}
+	
+	
+	
+	public static int power(int n, int e, int s)
+	{
+		return s;
+	}
+}

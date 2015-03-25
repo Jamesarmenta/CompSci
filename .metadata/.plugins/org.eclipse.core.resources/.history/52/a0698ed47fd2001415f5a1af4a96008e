@@ -1,0 +1,12 @@
+public class Node 
+{
+	public int data;
+	public Node next;
+	
+	public Node(String s)
+	{
+		data = s;
+		next = null;
+	}
+	
+}

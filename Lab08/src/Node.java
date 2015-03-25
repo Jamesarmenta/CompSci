@@ -1,11 +1,11 @@
 public class Node 
 {
-	public String data;
+	public int data;
 	public Node next;
 	
-	public Node(String s)
+	public Node(int i)
 	{
-		data = s;
+		data = i;
 		next = null;
 	}
 	
