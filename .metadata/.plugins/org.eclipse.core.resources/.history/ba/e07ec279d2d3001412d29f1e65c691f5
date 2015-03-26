@@ -1,0 +1,35 @@
+
+public class MergeCode {
+
+	public static void main(String[] args) {
+		int list[] = {100, 90, 30, 40, 50, 6, 15, 45, 3, 9, 7 };
+		
+		merge(list, 2, 4, 7);
+
+		for (int i=0; i<list.length; i++){
+			System.out.print(list[i] + " ");
+		}
+	}
+
+	public static int[] merge(int array[], int start, int mid, int end)
+	{
+		int curr = start;
+		int temp;
+
+		while (curr < end){
+
+			if (array[curr] > array [curr + 1])
+			{
+				temp = array[curr];
+				array[curr] = array[curr+1];
+				array[curr+1] = temp;
+				System.out.println('swapped');
+			}
+			else// (array[curr] < array [curr + 1])
+			{
+				curr++; 
+			}
+		}
+		return array;
+	}
+}

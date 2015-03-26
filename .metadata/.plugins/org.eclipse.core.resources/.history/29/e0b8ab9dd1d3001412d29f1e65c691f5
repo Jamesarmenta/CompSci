@@ -1,0 +1,31 @@
+
+public class MergeCode {
+
+	public static void main(String[] args) {
+		int list[] = {100, 90, 30, 40, 50, 6, 15, 45, 3, 9, 7 };
+		
+		merge(list, 2, 4, 7);
+
+	}
+
+	public static void merge(int array[], int start, int mid, int end)
+	{
+		int curr = start;
+		int temp;
+		
+		
+		if (array[curr] > array [curr + 1])
+		{
+			temp = array[curr];
+			array[curr] = array[curr+1];
+			array[curr+1] = temp;
+			
+			curr++; 
+		}
+		if (array[curr] < array [curr + 1])
+		{
+			curr++; 
+		}
+		
+	}
+}
