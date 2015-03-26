@@ -274,8 +274,10 @@ public class Assignment01 {
 		try
 		{
 			//Open printer
-			pw = new PrintWriter(new FileOutputStream(source, false)); //true for append, false for overwrite
+			pw = new PrintWriter(new FileOutputStream(source, true)); //true for append, false for overwrite
 			
+			System.out.println("");
+			pw.print("Updated List:");
 			for (int i=0; i<studentList.size(); i++){
 				pw.println(studentList.get(i).toString());
 			}

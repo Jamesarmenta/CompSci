@@ -276,6 +276,7 @@ public class Assignment01 {
 			//Open printer
 			pw = new PrintWriter(new FileOutputStream(source, false)); //true for append, false for overwrite
 			
+			System.out.println("");
 			for (int i=0; i<studentList.size(); i++){
 				pw.println(studentList.get(i).toString());
 			}
