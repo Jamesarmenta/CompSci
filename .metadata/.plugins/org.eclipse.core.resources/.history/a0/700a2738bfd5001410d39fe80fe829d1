@@ -1,0 +1,76 @@
+
+public class MergeCode {
+
+	public static void main(String[] args) {
+		int list[] = {100, 90, 30, 40, 50, 6, 15, 45, 3, 9, 7 };
+
+		merge(list, 2, 4, 7);
+
+		for (int i=0; i<list.length; i++){
+			System.out.print(list[i] + " ");
+		}
+		
+		System.out.println();
+		//System.out.println("Is it:");
+		//System.out.println("100 90 6 15 30 40 45 50 3 9 7");
+	}
+
+	public static int[] merge(int list[], int start, int mid, int end)
+	{
+		int firstPartIdx = start;
+		int secondPartIdx = mid+1;
+		int firstPartLength = (mid+1)-start;
+		int secondPartLength = end-mid;
+		int smallestPart;
+		
+		int[] temp = new int[firstPartLength+secondPartLength]; 
+
+		for (int i=0;i<temp.length; i++)
+		{		
+			System.out.println("New");
+			
+			if (firstPartIdx > firstPartLength+start || secondPartIdx > secondPartLength+mid) //if i has surpassed one of the lengths
+			{
+				if (firstPartIdx >= firstPartLength+start-1) //compare first part element with second part element & assign BIGGER int
+				{
+					temp[i] = list[secondPartIdx];
+					secondPartIdx++;
+					System.out.println("1");
+				}
+				else
+				{
+					temp[i] = list[firstPartIdx];
+					firstPartIdx++;
+					System.out.println("2");
+				}
+			}
+			else
+			{
+
+				if (list[firstPartIdx] < list[secondPartIdx]) //compare first part element with second part element & assign smaller int
+				{
+					temp[i] = list[firstPartIdx];
+					firstPartIdx++;
+					System.out.println("3");
+				}
+				else
+				{
+					temp[i] = list[secondPartIdx];
+					secondPartIdx++;
+					System.out.println("4");
+					if (temp[i] == 3) {
+						System.out.println("Here");
+					
+					}
+				}
+			}
+		}
+		
+		for (int i=start, tempIdx = 0; i < temp.length + 2; i++, tempIdx++) //merge two arrays
+		{
+			list[i] = temp[tempIdx];
+		}
+
+		return list;
+	}
+}
