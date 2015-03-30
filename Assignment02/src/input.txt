@@ -1,0 +1,5 @@
+Name: Dog |  Score:22
+Name: Alex |  Score:86
+Name: Mike |  Score:90
+Name: Joseph |  Score:92
+Name: Jane |  Score:95
