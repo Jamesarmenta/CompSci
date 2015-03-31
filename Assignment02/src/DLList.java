@@ -26,72 +26,13 @@ public class DLList
 		tail = head;
 	}
 
-	public void printList()
-	{
-		if(head != null)
-		{
-			DNode temp = this.head;
-			
-			while (temp != null)
-			{
-				System.out.println(temp.data);
-				temp = temp.next;
-			}
-		} 
-		else
-		{
-			System.out.println("List is empty");
-		}
-	}
-	
-	public void printListBackwards()
-	{
-		if(tail != null)
-		{
-			DNode temp = this.tail;
-			
-			while (temp != null)
-			{
-				System.out.println(temp.data);
-				temp = temp.prev;
-			}
-		} 
-		else
-		{
-			System.out.println("List is empty");
-		}
-	}
-	
-	// works whether or not linkedL is empty
-	public void addToBeginning(DNode nodeToBeAdded)
-	{
-		if (head !=null)
-		{
-			if (head.next == null)
-			{
-				nodeToBeAdded.next = head;
-				head.prev = nodeToBeAdded;
-				tail = head;
-				head = nodeToBeAdded;
-			}
-			else{
-				nodeToBeAdded.next = head;
-				head.prev = nodeToBeAdded;
-				head = nodeToBeAdded;
-			}
-		}
-		else
-		{
-			head = nodeToBeAdded;
-		}
-		
-		// we are now checking to see if the list was empty prior to use adding the node above
-		if (tail == null)
-		{
-			tail = head;
-		}
-	}
-
+	/**
+	 * ADD TO END
+	 * 
+	 * Adds node to end of DLList
+	 * 
+	 * @param nodeToBeAdded
+	 */
 	public void addToEnd(DNode nodeToBeAdded)
 	{
 		
@@ -110,6 +51,15 @@ public class DLList
 		}
 	}
 	
+	/**
+	 * SIZE
+	 * 
+	 * Loops through DLList until Node = null
+	 * Returns size of list
+	 * 
+	 * @return size 
+	 */
+	
 	public int size()
 	{
 		int size = 0;
@@ -124,6 +74,15 @@ public class DLList
 		return size;
 	}
 
+	
+	/**
+	 * GET
+	 * 
+	 * Iterates through DLList until specified index has been reached
+	 * 
+	 * @param idxToFind
+	 * @return DNode
+	 */
 	public DNode get(int idxToFind)
 	{
 		DNode temp = head;
@@ -136,46 +95,15 @@ public class DLList
 		return temp;
 	}
 	
-	public DNode searchForNode(String nameToFind)
-	{
-		DNode temp = head;
-		
-		while (temp != null && !(temp.data.name() == nameToFind))
-		{
-			temp = temp.next;
-		}
-		
-		if(temp == null)
-		{
-			System.out.println("Could not find searched node");
-		}
-		
-		return temp;
-	}
 	
-	public boolean replace(String findStr, int replaceInt, String replaceStr)
-	{
-		DNode n = searchForNode(findStr);
-		
-		if (n != null)
-		{
-			if(tail.data.name() == n.data.name())
-			{
-				tail.data = new StudentScore(replaceStr, replaceInt);
-			}
-			else
-			{
-				n.data = new StudentScore(replaceStr, replaceInt);
-			}
-			return true;
-		}
-		else
-		{
-			System.out.println("Could not replace");
-			return false;
-		}
-	}
-	
+	/**
+	 * DELETE
+	 * 
+	 * Searches for and deletes DNode containing sought-after String
+	 * 
+	 * @param toDeleteStr
+	 * @return
+	 */
 	public boolean delete(String toDeleteStr)
 	{
 		DNode temp = head;
@@ -230,88 +158,6 @@ public class DLList
 			}
 		}
 		return deleted;
-	}
-
-		
-	
-	public boolean addBefore(String nameToFind, String nameToAdd, int intToAdd)
-	{
-		DNode nodeToAdd = new DNode (nameToAdd, intToAdd);
-		DNode temp = head;
-		boolean added;
-		
-		DNode foundNode = searchForNode(nameToFind);
-		
-		if (foundNode == null) //No, could not find in search
-		{
-			System.out.println("Could not addBefore");
-			added = false;
-			return added;
-		}
-		if (head.data.name() == foundNode.data.name()) // Yes, did find in search in head position
-		{
-			added = true;
-			//set node to Node after nodeToAdd as current head
-			head.prev = nodeToAdd;
-			nodeToAdd.next = head;
-			// set added Node as head
-			head = nodeToAdd;
-		}
-		else
-		{
-			while (!(temp.next.equals(foundNode)))// Yes, did find in search
-			{
-				temp = temp.next;
-			}
-			
-			temp.next = nodeToAdd;
-			nodeToAdd.next = foundNode;
-			foundNode.prev = nodeToAdd;
-			nodeToAdd.prev = temp;
-			added = true;
-			
-		}
-		return added;
-	}
-	
-	public boolean addAfter(String nameToFind, String nameToAdd, int intToAdd)
-	{
-		DNode nodeToAdd = new DNode(nameToAdd, intToAdd);
-		DNode prevtemp;
-		boolean added;
-		
-		DNode foundNode = searchForNode(nameToFind);
-		
-		if (foundNode == null)
-		{
-			System.out.println("Could not addAfter");
-			added = false;
-			return added;
-		}
-		if (tail.data.name() == foundNode.data.name())// If found in tail
-		{
-			added = true;
-			nodeToAdd.prev = tail;
-			tail.next = nodeToAdd;
-			tail = nodeToAdd;
-		}
-		else
-		{
-			added = true;
-			nodeToAdd.next = foundNode.next;
-			prevtemp = foundNode.next;
-			foundNode.next = nodeToAdd;
-			nodeToAdd.prev = foundNode;
-			prevtemp.prev = nodeToAdd;
-		}
-		
-		return added;
-	}
-	
-	public void clear()
-	{
-		head = null;
-		tail = null;
 	}
 	
 }

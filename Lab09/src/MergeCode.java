@@ -2,9 +2,9 @@
 public class MergeCode {
 
 	public static void main(String[] args) {
-		int list[] = {100, 90, 6, 15, 30, 40, 45, 50, 3, 9, 7 };
+		int list[] = {10, 12, 80, 85, 90, 13, 18, 70, 86, 88};
 
-		merge(list, 2, 4, 7);
+		merge(list, 0, 4, 7);
 
 		for (int i=0; i<list.length; i++){
 			System.out.print(list[i] + " ");
@@ -27,9 +27,9 @@ public class MergeCode {
 
 		for (int i=0;i<temp.length; i++)
 		{		
-			if (firstPartIdx >= mid || secondPartIdx >= end) //if i has surpassed one of the lengths
+			if (firstPartIdx > mid || secondPartIdx > end) //if i has surpassed one of the lengths
 			{
-				if (firstPartIdx >= firstPartLength+start) //if index of firstPart has surpassed length, use only the secondPart
+				if (firstPartIdx > mid) //if index of firstPart has surpassed length, use only the secondPart
 				{
 					temp[i] = list[secondPartIdx];
 					secondPartIdx++;
@@ -56,7 +56,7 @@ public class MergeCode {
 			}
 		}
 		
-		for (int i=start, tempIdx = 0; i < temp.length+2; i++, tempIdx++) //merge two arrays
+		for (int i=start, tempIdx = 0; i<temp.length+start; i++, tempIdx++) //merge two arrays
 		{
 			list[i] = temp[tempIdx];
 		}

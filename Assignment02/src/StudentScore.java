@@ -8,22 +8,27 @@ public class StudentScore implements Comparable<StudentScore>{
 		score = 0;
 	}
 	
+	//sets name and score of student
 	public StudentScore(String name, int score)
 	{
 		this.name = name;
 		setScore(score);
 	}
 	
+	//returns name of student
 	public String name()
 	{
 		return name;
 	}
 	
+	//returns score of student
 	public int score()
 	{
 		return score;
 	}
 	
+	//sets score if between 0 & 100
+	// if out of scope, sets default score as 0
 	public void setScore(int score)
 	{
 		if (score >= 0 && score <= 100)
@@ -36,7 +41,7 @@ public class StudentScore implements Comparable<StudentScore>{
 		}
 	}
 
-
+	//compares two students
 	public int compareTo(StudentScore parmSS) 
 	{
 		if (this.score == parmSS.score)
@@ -50,6 +55,7 @@ public class StudentScore implements Comparable<StudentScore>{
 		}
 	}
 
+	//returns Student Score data as a String
 	public String toString(){
 		return "Name: " + name + " |  Score:" + score;
 	}

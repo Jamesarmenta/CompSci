@@ -17,6 +17,11 @@ public class Assignment02 {
 	public static String source;
 	
 	/**
+	 * MAIN METHOD
+	 * 
+	 * Reads input.txt file and creates Doubly Linked List from input
+	 * Sends DLList to Menu Question method
+	 * 
 	 * @param args
 	 * @throws FileNotFoundException 
 	 */
@@ -45,12 +50,17 @@ public class Assignment02 {
 		}
 	}
 
+	/**
+	 * MENU
+	 * 
+	 * Provides user interface via system output
+	 * 
+	 **/
+
 	private static void menuQuestion(DLList studentList) {
 		
 		Scanner input =  new Scanner(System.in);
-		
-/* MENU **************/
-		
+				
         // Criterion
 		System.out.println("1 Add a student and a test score to the list of students / scores.");
 		System.out.println("2 Find the score for a particular student.");
@@ -105,7 +115,12 @@ public class Assignment02 {
 		}}
 
    }
-//***ADD STUDENT AND SCORE
+/***ADD STUDENT AND SCORE
+ * 
+ * Adds new student score to end of DLList
+ * 
+ * @param studentList
+ */
 	public static void addStudent(DLList studentList)
 	{
 		Scanner input =  new Scanner(System.in);
@@ -118,7 +133,12 @@ public class Assignment02 {
 		menuQuestion(studentList);
 	}
 
-//***SEARCH STUDENT NAME
+/***SEARCH STUDENT NAME
+ * 
+ * Takes system input and searches for name in DLList
+ * 
+ * @param studentList
+ */
 	public static void searchName(DLList studentList)
 	{
 		Scanner input =  new Scanner(System.in);
@@ -146,7 +166,12 @@ public class Assignment02 {
 	    menuQuestion(studentList);
 	}
 	      
-//***DELETE STUDENT NAME
+/***DELETE STUDENT NAME
+ * 
+ * Searches for name in DLList and deletes it
+ * 
+ * @param studentList
+ */
 		public static void deleteStudent(DLList studentList)
 		{
 			Scanner input =  new Scanner(System.in);
@@ -175,7 +200,13 @@ public class Assignment02 {
 		}
 		      
 	
-//***FIND HIGHEST SCORE
+/***FIND HIGHEST SCORE
+ * 
+ * Loops through DLList, comparing each score element to current max value
+ * until all iterations are through
+ * 
+ * @param studentList
+ */
 	private static void findHighest(DLList studentList) 
 	{
 		int max = 0;
@@ -191,7 +222,13 @@ public class Assignment02 {
 		menuQuestion(studentList);
 	}
 	
-//***FIND LOWEST SCORE
+/***FIND LOWEST SCORE
+ * 
+ * Loops through DLList, comparing each score element to current min value
+ * until all iterations are through
+ * 
+ * @param studentList
+ */
 	private static void findLowest(DLList studentList) 
 	{
 		int max = 0;
@@ -207,7 +244,12 @@ public class Assignment02 {
 		menuQuestion(studentList);
 	}
 	
-//***SELECTION SORT
+/***SELECTION SORT
+ * 
+ * Sorts DLList by score
+ * 
+ * @param studentList
+ */
 	public static void selectionSort(DLList studentList){
 		int indexToSwap = studentList.size() - 1;
 		for (int pass=0; pass < studentList.size()-1; pass++){
@@ -230,7 +272,12 @@ public class Assignment02 {
 		menuQuestion(studentList);
 	}
 	
-//***CHANGE STUDENT SCORE
+/***CHANGE STUDENT SCORE
+ * 
+ * Searches for student name and, if found, changes the score via user input.
+ * 
+ * @param studentList
+ */
 		public static void changeScore(DLList studentList)
 		{
 			Scanner input =  new Scanner(System.in);
@@ -264,14 +311,25 @@ public class Assignment02 {
 		    menuQuestion(studentList);
 		}
 	
-//***DISPLAY LIST
+/***DISPLAY LIST
+ * 
+ * Prints DLList in order via system output
+ * 
+ * @param studentList
+ */
 	public static void displayList(DLList studentList){
 		for (int i=0; i<studentList.size(); i++){
 			System.out.println(studentList.get(i).data.toString());
 		}
 	}
 	
-//***PRINT LIST TO DOCUMENT
+/***PRINT LIST TO DOCUMENT
+ * 
+ * Prints DLList to source file, overwriting previous info
+ * 
+ * @param studentList
+ * @throws FileNotFoundException
+ */
 	public static void printListToFile(DLList studentList) throws FileNotFoundException{
 		PrintWriter pw;
 
