@@ -1,0 +1,57 @@
+public class DivideConquer 
+{
+	public static void main(String args[])
+	{
+		int[] list = {1, 2, 3, 4, 5, 6, 7, 8};
+		
+		rearrange(list);
+		
+		for(int i = 0; i < list.length; i++)
+		{
+			System.out.print(list[i] + " ");
+		}
+	}
+	
+	public static int[] rearrange(int[]list)
+	{
+		int[] temp = {list.length};
+		
+		for(int i = 0; i < temp.length; i++)
+		{
+			temp[i] = -1;
+		}
+		
+		rearrange(list, temp, 0, 0);
+		return list;
+	}
+	
+	public static int[] rearrange(int[] list, int[] temp, int i, int t)
+	{
+		if (i == list.length)//base case
+		{
+			return list;
+		}
+		else 
+		{
+			if (list[i]%2 == 0)
+			{
+				temp[temp.length-t-1] = list[i];
+				t++;
+				i++;
+				rearrange(list, temp, i, t);
+			}
+			else
+			{
+				i++;
+				rearrange(list, temp, i, t);
+			}
+		}
+		
+		for(int idx = 0; idx < temp.length; idx++)
+		{
+			System.out.print(temp[i] + " ");
+		}
+		
+		return list;
+	}
+}
