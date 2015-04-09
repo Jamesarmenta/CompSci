@@ -1,0 +1,12 @@
+
+public class TestPriorityQueue {
+
+	public static void main(String args[])
+	{
+		PriorityQueue theQ = new PriorityQueue(3);
+		
+		PriorityQueue.enqueue("REALLY BIG DEAL", 3);
+	}
+	
+	
+}

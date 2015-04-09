@@ -1,0 +1,7 @@
+
+public class TestPriorityQueue {
+
+	Queue theQ = new Queue();
+	
+	
+}

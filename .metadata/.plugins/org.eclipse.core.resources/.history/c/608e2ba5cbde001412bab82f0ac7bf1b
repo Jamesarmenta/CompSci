@@ -1,0 +1,26 @@
+
+public class TestPriorityQueue {
+
+	public static void main(String args[])
+	{
+		PriorityQueue theQ = new PriorityQueue(3);
+		
+		theQ.enqueue("REALLY BIG DEAL", 3);
+		theQ.enqueue("HUGE THING GOING ON", 3);
+		theQ.enqueue("SOMEWHAT important...", 2);
+		theQ.enqueue("YEAH we are HERE", 2);
+		theQ.enqueue("huh?", 1);
+		theQ.enqueue("whatever", 1);
+		theQ.enqueue("no biggy...", 1);
+		
+		theQ.dequeue();
+		theQ.dequeue();
+		theQ.dequeue();
+		theQ.dequeue();
+		theQ.dequeue();
+		theQ.dequeue();
+
+	}
+	
+	
+}

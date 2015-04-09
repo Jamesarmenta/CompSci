@@ -1,0 +1,35 @@
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class JavaSourceBalance 
+{
+	public static String source;
+	
+	public static void main(String args[]) throws IOException
+	{
+		Stack theStack = new Stack();
+		
+		//Open Scanner for file input
+		source = args[0];
+		//source = "src/input.txt";
+		FileInputStream input = new FileInputStream(source);
+	      char current;
+	      while (input.available() > 0) 
+	      {
+	        current = (char) input.read();
+	       
+	        if (current == '{')//if we find open curly brace
+	        {
+	        	current = (String) current;
+	        	
+	        	theStack.add(current); // adds to the end
+	        }
+	      }
+		
+	}
+	
+}

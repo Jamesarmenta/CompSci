@@ -30,5 +30,10 @@
     "location": "/students/home/jarmenta/cs106/Lab05/src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027/students/home/jarmenta/cs106/Lab05/src\u0027. Skipped."
+  },
+  "/students/home/jarmenta/CompSci/Lab11/src": {
+    "location": "/students/home/jarmenta/CompSci/Lab11/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/students/home/jarmenta/CompSci/Lab11/src\u0027. Skipped."
   }
 }
