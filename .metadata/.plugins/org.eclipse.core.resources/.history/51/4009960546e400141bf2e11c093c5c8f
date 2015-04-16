@@ -1,0 +1,28 @@
+Note: A tree with only a root and no other nodes has height = 0.
+---------
+a) If a heap contained 100 elements, what is the minimum height of the 
+heap?  What is the maximum height of the heap?
+
+The minimum height of the heap would be 7. (log2 100 = 6.6 )Seemingly 6, but by definition,
+a binary tree must be complete in order to classify as heaps.
+The maximum height of the heap is also 7, because the heap must be complete. 
+---------
+b) How about a heap with 9765 elements?
+The minimum and maximum height of the heap would be 14. (log2 9765 = 13.2)
+---------
+c) What is the minimum number of total elements that cause the heap 
+to have larger height (than the heap has with 9765 elements?)
+
+---------
+d) What is the maximum number of swaps performed to do an insert into
+a heap with 9765 elements?  What is the minimum number of swaps to do
+that?  
+
+---------
+e) Given a maxHeap, how many elements need to be looked at to determine
+the largest value?
+
+---------
+f) Given a maxHeap stored as an array, come up with an algorithm to determine the lowest value in the maxHeap. 
+
+

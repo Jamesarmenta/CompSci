@@ -1,35 +1,36 @@
 public class DivideConquer {
-
-	public static int maxCSSDC(int list[], int startIdx, int endIdx)
+	public static void main(String[] args) 
 	{
-	
-		// base case(s)
-		if (startIdx == endIdx) // sublist is of size 1
+		int myNums[] = {1, 2, 3, 4, 5, 6, 7, 7 ,7};
+
+		printList(myNums);
+	}
+
+	// sIdx is the index of the first element of the sublist
+	// eIdx is the index of the last element of the sublist
+	public static void divide(int list[], int sIdx, int eIdx)
+	{
+		// base case
+		if (eIdx - sIdx == 0) // sublist is length 1
 		{
-			if (list[startIdx] < 0)
-				return 0;
-			else
-				return list[startIdx];
+			return;
 		}
 
 		// recursive step(s)
-		// divide
-		int midIdx = (startIdx + endIdx) / 2;
-		int maxLeft = maxCSSDC(list, startIdx, midIdx);
-		int maxRight = maxCSSDC(list, midIdx+1, endIdx);
-		
-		// conquer
-		
-		
-		// the answer is either maxLeft, maxRight OR spanSum
-		
+		// which include dividing and conquering
+
+		// we know sublist length is >= 2
+		int midIdx = (sIdx + eIdx) / 2; // we know that it is integer div.
+		mergeSort(list, sIdx, midIdx);
+		mergeSort(list, midIdx+1, eIdx);
+
+		// when we get here, what do we know2 sublists that are sorted
+		// amongst themselves
+		// Left sublist goes from sIdx to midIdx 
+		// Right sublist goes from midIdx+1 to eIdx		
+		conquer(list, sIdx, midIdx, eIdx);
 	}
-	
-	public static int maxCSSDC(int list[])
-	{
-		return maxCSSDC(list, 0, list.length - 1);
-	}
-	
+
 	// We can assume that list has a sublist from sIdx to midIdx that is sorted
 	// and another sublist from midIdx+1 to eIdx that is also sorted
 	//
@@ -37,7 +38,7 @@ public class DivideConquer {
 	public static void conquer(int list[], int sIdx, int midIdx, int eIdx)
 	{
 		int tempList[] = new int[eIdx - sIdx + 1];
-		
+
 		int leftIdx = sIdx;
 		int rightIdx = midIdx + 1;
 		// i represents the index of where we're putting a value into tempList
@@ -56,10 +57,8 @@ public class DivideConquer {
 			}
 			i++;
 		}
-		
 
 		// only one of these two while loop will iterate >0 times
-
 		// copy all the elements still on the left into the temp
 		while (leftIdx <= midIdx)
 		{
@@ -75,7 +74,7 @@ public class DivideConquer {
 			i++;
 			rightIdx++;
 		}
-		
+
 		int listIdx = sIdx;
 		// i is good as an index to tempList, but we need something
 		// else as the index to list
@@ -84,43 +83,7 @@ public class DivideConquer {
 			list[listIdx] = tempList[j];
 		}
 	}
-	
-	// sIdx is the index of the first element of the sublist
-	// eIdx is the index of the last element of the sublist
-	public static void mergeSort(int list[], int sIdx, int eIdx)
-	{
-		
-		// base case
-		if (eIdx - sIdx == 0) // sublist is length 1
-		{
-			return;
-		}
-		
-		// recursive step(s)
-		// which include dividing and conquering
-		
-		// we know sublist length is >= 2
-		int midIdx = (sIdx + eIdx) / 2; // we know that it is integer div.
-		mergeSort(list, sIdx, midIdx);
-		mergeSort(list, midIdx+1, eIdx);
-	
-		// when we get here, what do we know2 sublists that are sorted
-		// amongst themselves
-		// Left sublist goes from sIdx to midIdx 
-		// Right sublist goes from midIdx+1 to eIdx		
-		conquer(list, sIdx, midIdx, eIdx);
-		
-		
-	}
 
-	public static void mergeSort(int list[])
-	{
-
-		mergeSort(list, 0, list.length-1);
-		
-	}
-
-	
 	public static void printList(int list[])
 	{
 		for (int i=0; i< list.length; i++)
@@ -128,20 +91,4 @@ public class DivideConquer {
 			System.out.println(list[i]);
 		}
 	}
-	
-
-	
-	public static void main(String[] args) 
-	{
-	
-		int myNums[] = { 45,-13, 44, 43, -12, 0, 99, 10, 2, 30, 90, 7, 11, 87, 3 };
-		
-		int maxSum = maxCSSDC(myNums);
-		
-		mergeSort(myNums);
-		printList(myNums);
-		
-		
-	}
-
 }

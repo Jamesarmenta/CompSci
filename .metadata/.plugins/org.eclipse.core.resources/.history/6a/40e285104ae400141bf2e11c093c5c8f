@@ -1,0 +1,11 @@
+
+public class TestHeap {
+
+	public static void main(String[] args)
+	{
+		Heap[] theHeap = new Heap[16];
+		
+		theHeap.add("First", 6);
+		
+	}
+}
