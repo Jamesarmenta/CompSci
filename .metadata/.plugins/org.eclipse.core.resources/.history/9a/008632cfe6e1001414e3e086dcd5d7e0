@@ -1,0 +1,14 @@
+
+public class test {
+	
+	public static void main(String[] args)
+	{
+		tryit(6);
+	}
+	
+	public static double tryit(int num)
+	{
+		return (tryit(num-1)*tryit(num-2)/tryit(num-3));
+	}
+	
+}

@@ -1,0 +1,21 @@
+
+public class test {
+	
+	public static void main(String[] args)
+	{
+		System.out.println(tryit(4));
+	}
+	
+	public static double tryit(int num)
+	{
+		if (num<=3)
+		{
+			return num;
+		}
+		else
+		{
+			return (tryit(num-1)*tryit(num-2)/tryit(num-3));	
+		}
+	}
+	
+}

@@ -1,96 +1,147 @@
-public class DivideConquer 
-{
-	public static int INVALID = -1;
-	
-	public static void main(String args[])
-	{
-		int[] list = {1, 2, 3, 4, 5, 6, 7, 8};
-		
-		rearrange(list);
-		
-		for(int i = 0; i < list.length; i++)
-		{
-			System.out.print(list[i] + " ");
-		}
-	}
-	
-	public static int[] rearrange(int list[])
-	{
-		rearrange(list, 0, list.length);
-		
-		return list;
-	}
-	
-	public static int[] rearrange(int list[], int startIdx, int endIdx)
+public class DivideConquer {
+
+	public static int maxCSSDC(int list[], int startIdx, int endIdx)
 	{
 	
 		// base case(s)
 		if (startIdx == endIdx) // sublist is of size 1
 		{
 			if (list[startIdx] < 0)
-				return list;
+				return 0;
 			else
-				return list;
+				return list[startIdx];
 		}
 
 		// recursive step(s)
 		// divide
 		int midIdx = (startIdx + endIdx) / 2;
-		rearrange(list, startIdx, midIdx);
-		rearrange(list, midIdx+1, endIdx);
+		int maxLeft = maxCSSDC(list, startIdx, midIdx);
+		int maxRight = maxCSSDC(list, midIdx+1, endIdx);
+		
+		// conquer
 		
 		
+		// the answer is either maxLeft, maxRight OR spanSum
 		
-		
-		
-		return list;
 	}
 	
-	
-	/////////////////////////////////////////////////////////
-	public static int[] rearrange2(int[]list)
+	public static int maxCSSDC(int list[])
 	{
-		int[] evens = new int[list.length];
-		
-		for(int i = 0; i < evens.length; i++)
-		{
-			evens[i] = INVALID;
-		}
-		
-		rearrange2(list, evens, 0, 0);
-		return list;
+		return maxCSSDC(list, 0, list.length - 1);
 	}
 	
-	public static int[] rearrange2(int[] list, int[] evens, int i, int t)
+	// We can assume that list has a sublist from sIdx to midIdx that is sorted
+	// and another sublist from midIdx+1 to eIdx that is also sorted
+	//
+	// result the sublist from sIdx to eIdx will be sorted
+	public static void conquer(int list[], int sIdx, int midIdx, int eIdx)
 	{
-		if (i == list.length)//base case
+		int tempList[] = new int[eIdx - sIdx + 1];
+		
+		int leftIdx = sIdx;
+		int rightIdx = midIdx + 1;
+		// i represents the index of where we're putting a value into tempList
+		int i=0;
+		while (leftIdx <= midIdx && rightIdx <= eIdx)
 		{
-			return list;
-		}
-		else 
-		{
-			if (list[i]%2 == 0)
+			if (list[leftIdx] >= list[rightIdx])
 			{
-				evens[evens.length-t-1] = list[i];
-				t++;
-				i++;
-				rearrange2(list, evens, i, t);
+				tempList[i] = list[rightIdx];
+				rightIdx++;
 			}
 			else
 			{
-				i++;
-				rearrange2(list, evens, i, t);
+				tempList[i] = list[leftIdx];
+				leftIdx++;
 			}
+			i++;
 		}
 		
-		for(int idx = 0; idx < list.length; idx++)
+
+		// only one of these two while loop will iterate >0 times
+
+		// copy all the elements still on the left into the temp
+		while (leftIdx <= midIdx)
 		{
-			if(evens[idx] == INVALID)
-			{
-				
-			}
+			tempList[i] = list[leftIdx]; 
+			i++;
+			leftIdx++;
+		}
+
+		// copy all the elements still on the right into the temp
+		while (rightIdx <= eIdx)
+		{
+			tempList[i] = list[rightIdx]; 
+			i++;
+			rightIdx++;
 		}
 		
-		return list;
+		int listIdx = sIdx;
+		// i is good as an index to tempList, but we need something
+		// else as the index to list
+		for (int j=0; j < tempList.length; j++, listIdx++)
+		{
+			list[listIdx] = tempList[j];
+		}
 	}
+	
+	// sIdx is the index of the first element of the sublist
+	// eIdx is the index of the last element of the sublist
+	public static void mergeSort(int list[], int sIdx, int eIdx)
+	{
+		
+		// base case
+		if (eIdx - sIdx == 0) // sublist is length 1
+		{
+			return;
+		}
+		
+		// recursive step(s)
+		// which include dividing and conquering
+		
+		// we know sublist length is >= 2
+		int midIdx = (sIdx + eIdx) / 2; // we know that it is integer div.
+		mergeSort(list, sIdx, midIdx);
+		mergeSort(list, midIdx+1, eIdx);
+	
+		// when we get here, what do we know2 sublists that are sorted
+		// amongst themselves
+		// Left sublist goes from sIdx to midIdx 
+		// Right sublist goes from midIdx+1 to eIdx		
+		conquer(list, sIdx, midIdx, eIdx);
+		
+		
+	}
+
+	public static void mergeSort(int list[])
+	{
+
+		mergeSort(list, 0, list.length-1);
+		
+	}
+
+	
+	public static void printList(int list[])
+	{
+		for (int i=0; i< list.length; i++)
+		{
+			System.out.println(list[i]);
+		}
+	}
+	
+
+	
+	public static void main(String[] args) 
+	{
+	
+		int myNums[] = { 45,-13, 44, 43, -12, 0, 99, 10, 2, 30, 90, 7, 11, 87, 3 };
+		
+		int maxSum = maxCSSDC(myNums);
+		
+		mergeSort(myNums);
+		printList(myNums);
+		
+		
+	}
+
 }

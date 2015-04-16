@@ -1,0 +1,9 @@
+public class StackOfChars {
+	
+	public static void main(String[] args)
+	{
+		Stack theStack = new Stack(3);
+		
+		theStack.enqueue("THIS IS PRIORITY 3, FIRST IN LINE", 3);
+	}
+}

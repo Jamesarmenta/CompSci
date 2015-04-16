@@ -11,7 +11,7 @@ public class JavaSourceBalance
 		Stack theStack = new Stack();
 		
 		//Open Scanner for file input
-	        source = args[0];
+	    source = args[0];
 		//source = "src/input.txt";
 		FileInputStream input = new FileInputStream(source);
 	      char current;
