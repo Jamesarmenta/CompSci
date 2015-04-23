@@ -1,0 +1,7 @@
+
+public class Vertex {
+	
+	private int vNum;
+	private String name;
+
+}

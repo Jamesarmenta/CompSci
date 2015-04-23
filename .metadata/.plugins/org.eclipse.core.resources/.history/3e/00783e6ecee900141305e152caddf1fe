@@ -1,0 +1,13 @@
+
+public class Vertex {
+	
+	private int vNum;
+	private String name;
+	private VertexMode flag;
+	
+	public Vertex 
+	{
+		
+	}
+
+}
