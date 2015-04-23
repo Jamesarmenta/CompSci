@@ -4,18 +4,19 @@ public class TestBST {
 	public static void main(String[] args) {
 		
 		BSTree myBST = new BSTree();
-		myBST.insert(100);
-		myBST.insert(50);
-		myBST.insert(250);
-		myBST.insert(20);
-		myBST.insert(30);
-		myBST.insert(1);
+		myBST.insert(9);
 		
-		myBST.findMaximum();
-		myBST.findMinimum();
-		System.out.println("- - - - ");
-		myBST.inOrderPrint();
-
+		if(myBST.contains(10))
+		{
+			System.out.println("Yup!!");
+		}
+		
+		myBST.insert(10);
+		
+		if(myBST.contains(10))
+		{
+			System.out.println("Yup!!");
+		}
 	}
 
 }

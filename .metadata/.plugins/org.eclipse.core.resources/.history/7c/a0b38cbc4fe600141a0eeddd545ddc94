@@ -1,0 +1,32 @@
+private boolean contains(int key)
+	{
+		int currElement = 0;
+		
+		if(mybst[0]==key)
+		{
+			return true;
+		}
+		
+		while (mybst[currElement]!=-1){
+			if(mybst[currElement]==key)
+			{
+				return true;
+			}
+			else if(mybst[currElement]>key)
+			{
+				//revised minor error in exam here
+				//added "currElement ="
+				currElement = (currElement*2)+1;
+			}
+			else
+			{
+				//revised minor error in exam here
+				//added "currElement ="
+				currElement = (currElement*2)+2;
+			}
+		}
+		
+		return false;
+
+	}
+}

@@ -1,0 +1,7 @@
+
+public class Problem4 {
+	
+	int[] mybst = int [1000];
+	
+
+}
