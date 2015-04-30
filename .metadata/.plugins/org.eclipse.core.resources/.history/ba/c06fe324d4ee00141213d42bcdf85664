@@ -1,0 +1,46 @@
+public class DivideConquer {
+	public static void main(String[] args) 
+	{
+		int myNums[] = {1, 2, 3, 4, 5, 6, 7, 7 ,7};
+
+		printList(myNums);
+	}
+
+	// sIdx is the index of the first element of the sublist
+	// eIdx is the index of the last element of the sublist
+	public static void divide(int list[], int sIdx, int eIdx)
+	{
+		// base case
+		if (eIdx - sIdx == 0) // sublist is length 1
+		{
+			return;
+		}
+
+		int midIdx = (sIdx + eIdx) / 2; // we know that it is integer div.
+		int sIdx= divide(list, sIdx, midIdx);
+		int eIdx divide(list, midIdx+1, eIdx);
+
+		//send to conquer method
+		conquer(list, sIdx, midIdx, eIdx);
+	}
+
+	// We can assume that list has a sublist from sIdx to midIdx that is sorted
+	// and another sublist from midIdx+1 to eIdx that is also sorted
+	//
+	// result the sublist from sIdx to eIdx will be sorted
+	public static void conquer(int list[], int sIdx, int midIdx, int eIdx)
+	{
+		int tempList[] = new int[eIdx - sIdx + 1];
+		
+		if
+		
+	}
+
+	public static void printList(int list[])
+	{
+		for (int i=0; i< list.length; i++)
+		{
+			System.out.println(list[i]);
+		}
+	}
+}
