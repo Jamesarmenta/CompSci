@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+
+
+public class QueueOfStrings 
+{
+	private ArrayList<String> theQ; // enqueue to the end, dequeue from the beginning
+	
+	public QueueOfStrings()
+	{
+		theQ = new ArrayList<String>(); // creates an empty array list 
+	}
+	
+	public void enqueue(String s)
+	{
+		theQ.add(s);  // adds to the end
+	}
+	
+	public String dequeue()
+	{
+		if (isEmpty())
+		{
+			System.out.println("Cannot dequeue because queue is empty");
+			return null;
+		}
+		else
+		{
+			System.out.println("Dequed: " + theQ.get(0));
+			return theQ.remove(0); // remove from the beginning
+		}
+	}
+	
+	public boolean isEmpty()
+	{
+		return theQ.size() == 0;
+	}
+
+}

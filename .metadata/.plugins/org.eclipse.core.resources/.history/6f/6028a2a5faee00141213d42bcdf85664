@@ -1,0 +1,12 @@
+public class DNode 
+{
+	public int data;
+	public DNode next;
+	
+	public DNode(int i)
+	{
+		data = i;
+		next = null;
+	}
+	
+}

@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class Balance {
+
+	public static void main(String[] args)
+	{
+		String braces = "{}{}{}{{{}}}";
+		StackOfChars stack = new StackOfChars();
+		
+		for (char ch: braces.toCharArray()) 
+		{
+			
+		}
+		
+		if (current == '{')//if we find open curly brace
+		{
+			theStack.push(Character.toString(current)); // adds to the end
+		}
+
+		if (current == '}')
+		{
+			if (theStack.isEmpty())
+			{
+				theStack.push(Character.toString(current));
+				break;
+			}
+			theStack.pop(); //if we find close curly brace, pop from the stack
+		}
+
+
+		if (theStack.isEmpty())//if we have pushed and popped an even amount of times
+		{
+			System.out.println("Braces are even!");
+		}
+		else //leftover(s) remain in the stack
+		{
+			System.out.println("Nope. Braces are not balanced!");
+		}
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class TestQueueOfStrings {
+
+	public static void main(String[] args) {
+		QueueOfStrings theQ = new QueueOfStrings();
+		
+		theQ.enqueue("dog");
+
+	}
+
+}

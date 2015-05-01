@@ -64,7 +64,7 @@ public class Heap
 
 		int parentIdx = 0;
 
-		// ****** need to set parentIdx inside the loop so that we can move down the tree
+		//need to set parentIdx inside the loop so that we can move down the tree
 
 		//downward reheapify
 		while (true)
@@ -79,13 +79,13 @@ public class Heap
 				// do we only have one child (on the left)?
 				if (rightChildIdx(parentIdx) > lastActualElementIdx)
 				{
-					if (theHeap[parentIdx].getPriority() < 
-							theHeap[leftChildIdx(parentIdx)].getPriority())
+					if (theHeap[parentIdx].getPriority() < theHeap[leftChildIdx(parentIdx)].getPriority())
 					{
 						// swap with left child
 						ItemAndPriority temp = theHeap[parentIdx];
 						theHeap[parentIdx] = theHeap[leftChildIdx(parentIdx)];
 						theHeap[leftChildIdx(parentIdx)] = temp;
+						parentIdx = leftChildIdx(parentIdx);
 					}
 					else
 					{
@@ -108,6 +108,7 @@ public class Heap
 							ItemAndPriority temp = theHeap[parentIdx];
 							theHeap[parentIdx] = theHeap[leftChildIdx(parentIdx)];
 							theHeap[leftChildIdx(parentIdx)] = temp;
+							parentIdx = leftChildIdx(parentIdx);
 						}
 						else
 						{
@@ -115,6 +116,7 @@ public class Heap
 							ItemAndPriority temp = theHeap[parentIdx];
 							theHeap[parentIdx] = theHeap[rightChildIdx(parentIdx)];
 							theHeap[rightChildIdx(parentIdx)] = temp;
+							parentIdx = rightChildIdx(parentIdx);
 						}
 
 					}

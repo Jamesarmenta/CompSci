@@ -5,14 +5,21 @@ public class TestHeap {
 	{
 		Heap theHeap = new Heap();
 		
-		theHeap.add("First", 100);
-		theHeap.add("Second", 50);
-		theHeap.add("Third", 90);
-		theHeap.add("Fourth", 49);
-		theHeap.add("Fifth", 10);
-		theHeap.add("Sixth", 80);
-		theHeap.add("Seventh", 85);
-		theHeap.add("Eighth", 6);
+		theHeap.add("First", 1);
+		theHeap.add("Second", 2);
+		theHeap.add("Third", 3);
+		theHeap.add("Fourth", 4);
+		theHeap.add("Fifth", 5);
+		theHeap.add("Sixth", 6);
+		theHeap.add("Seventh", 7);
+		theHeap.add("Eighth", 8);
+		theHeap.add("Eighth", 9);
+		theHeap.add("Eighth", 2);
+		
+		
+		theHeap.remove();
+		theHeap.remove();
+		
 		
 		theHeap.print();
 		

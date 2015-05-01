@@ -1,0 +1,21 @@
+public class StackOfChars {
+	
+	public static void main(String[] args)
+	{
+		Stack theStack = new Stack();
+		
+		theStack.push("a");
+		theStack.push("b");
+		theStack.push("c");
+		theStack.push("d");
+		theStack.push("e");
+		
+		theStack.pop();
+		theStack.pop();
+		theStack.pop();
+		theStack.pop();
+		
+		System.out.println(theStack.peek());
+		
+	}
+}

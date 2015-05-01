@@ -1,0 +1,35 @@
+
+public class QueueOfStrings 
+{
+	private DLList theQ; // enqueue to the end, dequeue from the beginning
+	
+	public QueueOfStrings()
+	{
+		theQ = new DLList(); // creates an empty array list 
+	}
+	
+	public void enqueue(String s)
+	{
+		theQ.addToEnd(s);  // adds to the end
+	}
+	
+	public DNode dequeue()
+	{
+		if (isEmpty())
+		{
+			System.out.println("Cannot dequeue because queue is empty");
+			return null;
+		}
+		else
+		{
+			System.out.println("Dequed: " + theQ.get(0));
+			return theQ.delete(); // remove from the beginning
+		}
+	}
+	
+	public boolean isEmpty()
+	{
+		return theQ.size() == 0;
+	}
+
+}
