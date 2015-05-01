@@ -1,0 +1,11 @@
+
+public class PriorityQueue {
+	
+	private String s
+	
+	public void PriorityQueue(String s, int p)
+	{
+		
+	}
+
+}

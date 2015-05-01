@@ -19,9 +19,11 @@ public class TestHeap {
 		
 		theHeap.remove();
 		theHeap.remove();
+		theHeap.remove();
+		theHeap.remove();
+		theHeap.remove();
 		
 		
 		theHeap.print();
-		
 	}
 }

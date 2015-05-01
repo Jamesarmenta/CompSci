@@ -1,0 +1,12 @@
+
+public class PriorityQueue {
+	
+	private ItemAndPriority content;
+	
+	public PriorityQueue(String s, int p)
+	{
+		ItemAndPriority(s, p);
+	}
+	
+
+}

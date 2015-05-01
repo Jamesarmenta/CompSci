@@ -1,0 +1,12 @@
+
+public class PriorityQueue {
+	
+	private Heap theHeap;
+	
+	public void enqueue(String s, int p)
+	{
+		theHeap.add(s, p);
+	}
+	
+
+}

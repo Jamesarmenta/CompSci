@@ -2,7 +2,7 @@
 public class Heap 
 {
 	private ItemAndPriority theHeap[];
-	private int idxToAddTo; 
+	public int idxToAddTo; 
 
 	public Heap()
 	{
@@ -140,7 +140,7 @@ public class Heap
 	public void print()
 	{
 		int level=0;
-		System.out.println("Level 0: " + theHeap[0].getPriority());
+		System.out.println("Level " + level + ": " + theHeap[0].getData() + ", " + theHeap[0].getPriority());
 
 		int currIdx=1;
 		while(currIdx < idxToAddTo)
@@ -148,7 +148,7 @@ public class Heap
 			level = (int)(Math.log10(currIdx+1)/Math.log10(2)); // log base 2 of currIdx
 			
 			//double d = 1e-10; // 1 * 10 to the -10
-			System.out.println("Level " + level + ": " + theHeap[currIdx].getPriority());
+			System.out.println("Level " + level + ": " + theHeap[currIdx].getData() + ", " + theHeap[currIdx].getPriority());
 			currIdx++;
 		}
 	}
