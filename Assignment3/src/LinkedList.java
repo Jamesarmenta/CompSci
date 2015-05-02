@@ -62,21 +62,7 @@ public class LinkedList
 	}
 
 	public Node searchForNode(int dataToFind)
-	{/*
-	poor programming practice solution:
-		Node temp = head;
-		
-		while (temp != null)
-		{
-			if (temp.data.equals(dataToFind))
-			{
-				return temp;
-			}
-			temp = temp.next;
-		}
-		
-		return null;
-		*/
+	{
 		Node temp = head;
 		
 		while (temp != null && !(temp.data == dataToFind))
