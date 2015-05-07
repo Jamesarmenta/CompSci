@@ -31,16 +31,13 @@ public class LinkedList
 
 	public void addToEnd(Node nodeToBeAdded)
 	{
-		// let's write code assuming linkedL is NOT empty
 		Node temp = this.head;
 		
-		// write code that makes temp become the last Node in the list
 		while (temp.next != null)
 		{
 			temp = temp.next;
 		}
 
-		// then add the nodeToBeAdded after temp
 		temp.next = nodeToBeAdded;
 		
 	}
@@ -88,13 +85,11 @@ public class LinkedList
 		return false;
 	}
 	
-	// need to fix this up, also noticed it wouldn't work for empty list
 	public boolean delete(int toDeleteStr)
 	{
 		Node temp = head;
 		boolean deleted;
 		
-		// need to handle empty list
 		if (head == null)
 		{
 			deleted = false;
@@ -158,5 +153,28 @@ public class LinkedList
 		
 		return added;
 	}
+	
+	public int length()
+	{
+		int numOfElements = 1;
+		return length(head, numOfElements);
+	}
+	
+	public int length(Node lln, int counter)
+	{
+		if (lln == null)
+			return 0;
+		else
+		{
+			if (lln.next == null)
+				return counter;
+			else
+			{
+				return counter + length(lln.next, counter);
+			}
+		}
+	}
+	
+	
 	
 }

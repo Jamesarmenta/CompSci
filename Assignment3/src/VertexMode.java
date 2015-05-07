@@ -1,4 +1,4 @@
-public enum VertexMode
+public enum VertexMode 
 {
 	UNVISITED, WAITING, VISITED
 }

@@ -1,4 +1,3 @@
-
 public class QueueOfInts 
 {
 	
@@ -7,7 +6,7 @@ public class QueueOfInts
 	private int rear; // the index of the place just before the place to enQ to
 	private int front; // index of the place from which to deQ
 	private int numElements;
-	private final int MAXSIZE = 1000;
+	private final int MAXSIZE = 100;
 	public QueueOfInts()
 	{
 		theQ = new int[MAXSIZE];

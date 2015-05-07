@@ -1,0 +1,36 @@
+
+public class QueueOfInts 
+{
+	private int theQ[];
+	private int rear;
+	private int front;
+	private int numElements;
+	private final int MAXSIZE = 100000;
+	public QueueOfInts()
+	{
+		theQ = new int[MAXSIZE];
+		rear = -1;
+		front = 0;
+		numElements = 0;
+	}
+	
+	public void enqueue(int intToAdd)
+	{
+		theQ[++rear] = intToAdd;
+		numElements++;
+	}
+	
+
+	public int dequeue()
+	{
+		numElements--;
+		return theQ[front++];
+	}
+	
+	public boolean isEmpty()
+	{
+		return numElements == 0;
+	}
+
+	
+}

@@ -1,13 +1,11 @@
 public class Node 
 {
 	public int data;
-	public int weight;
 	public Node next;
 	
-	public Node(int s, int w)
+	public Node(int s)
 	{
 		data = s;
-		weight = w;
 		next = null;
 	}
 	
