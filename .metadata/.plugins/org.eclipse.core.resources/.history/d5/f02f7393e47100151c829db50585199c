@@ -1,0 +1,35 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Lab4 {
+
+	public static void main(String [] args)
+	{
+		// String to be scanned to find the pattern.
+		String text = "You owe me $2.56.\n  Why won't you pay up?"; 
+
+		for(int i = 0; i < 20; i++)
+		{
+			String pattern = "([A-Z|a-z|']+)(.*)";
+			// Create a Pattern object
+			Pattern r = Pattern.compile(pattern);
+			
+			// Now create matcher object.
+			Matcher m = r.matcher(text);
+			if (m.find( )) 
+			{
+				System.out.println("Found value: " + m.group(1) );
+				text = m.group(2);
+			}
+			else
+			{
+				Matcher m2 = Pattern.compile("(.{1})(.*)").matcher(text);
+				if(m2.find())
+				{
+					text = m.group(2);
+				}
+			}
+		}
+	
+	}
+}

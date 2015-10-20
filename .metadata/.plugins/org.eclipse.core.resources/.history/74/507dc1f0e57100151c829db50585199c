@@ -1,0 +1,42 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Lab4 {
+
+	public static void main(String [] args)
+	{
+		// String to be scanned to find the pattern.
+		String text = "You owe me $2.56.\n  Why won't you pay up?"; 
+
+		while(text.length() > 1)
+		{
+			String pattern = "([A-Za-z']+)";
+			// Create a Pattern object
+			Pattern r = Pattern.compile(pattern);
+			
+			// Now create matcher object.
+			Matcher m = r.matcher(text);
+			if (m.find( )) 
+			{
+				System.out.println("Found value: " + m.group(1));
+				System.out.println("The REST: " + m.group(2));
+				
+				text = text.substring(m.end(), text.length());//m.group(2);
+			}
+			else
+			{
+				Matcher m2 = Pattern.compile("(.)(.*)").matcher(text);
+				if(m2.find())
+				{
+					System.out.println("Skipped: " + m2.group(1));
+					text = m2.group(2);
+				}
+				else
+				{
+					System.out.println("ERROR");
+				}
+			}
+		}
+	
+	}
+}

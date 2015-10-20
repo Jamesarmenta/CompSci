@@ -1,0 +1,15 @@
+eggs
+1.59
+butter
+2.47
+milk
+2.25
+cookies
+3.39
+water
+1.29
+soda
+2.45
+book
+124.99
+eof

@@ -1,0 +1,10 @@
+programprogram ABC
+begin
+
+	while(true)
+        {
+		print "Hello";
+		begin= begin*2;
+	}
+
+end
