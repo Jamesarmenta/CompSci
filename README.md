@@ -1,4 +1,3 @@
-CS106
+CompSci
 =====
-
-Computer Science 106
+A mish-mash of computer ccience projects from my time at Skidmore College.
